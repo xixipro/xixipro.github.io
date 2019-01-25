@@ -101,7 +101,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="git和svn">
 <meta property="og:url" content="http://yoursite.com/2019/01/25/git和svn/index.html">
-<meta property="og:site_name" content="xixipro Blog">
+<meta property="og:site_name" content="Anne Blog">
 <meta property="og:description" content="gitgit分布式的版本控制 git是由Linux开发的，所以git和Linux文件系统结合的比较紧密。 git中没有中央版本库的说法，但是为了开发小组的代码共享，通常会搭建一个远程仓库，从某种程度说本地仓库和远程仓库在身份上是等价的本地到远程的步骤 本地创建一个git库，并将其add到远程git库中 在本地添加或者删除文件，然后commit提交到本地的git库中 将本地git库的分支push到远">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-01-25T04:56:34.194Z">
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>git和svn | xixipro Blog</title>
+  <title>git和svn | Anne Blog</title>
   
 
 
@@ -183,7 +183,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">xixipro Blog</span>
+        <span class="site-title">Anne Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -344,7 +344,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xixipro Blog">
+      <meta itemprop="name" content="Anne Blog">
     </span>
 
     
@@ -410,6 +410,18 @@
 
           
             
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <a href="/2019/01/25/git和svn/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2019/01/25/git和svn/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -511,6 +523,13 @@
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
 
   
 
@@ -803,6 +822,47 @@
 
   
 
+
+  
+    <!-- LOCAL: You can save these files to your site and update links -->
+
+  
+  <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitmint.browser.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.css">
+<!-- END LOCAL -->
+
+<style>
+#gitment-container a {
+  border-bottom: none;
+}
+
+</style>
+
+<script>
+  function renderGitment() {
+    var gitment = new Gitmint({
+      id: window.location.pathname,
+      owner: 'xixipro',
+      repo: 'https://github.com/xixipro/Gitment.git',
+      
+        lang: '' || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+      
+      oauth: {
+      
+      
+        client_secret: '4fb179a7a8af609da61ebae1f9e029851a1305ff',
+      
+        client_id: 'b1a9a5a20219dd89592e'
+      }
+    });
+    gitment.render('gitment-container');
+  }
+
+  
+    renderGitment();
+  
+</script>
 
   
 
