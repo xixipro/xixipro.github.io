@@ -379,12 +379,24 @@
                 
               
 
-              <time title="创建时间：2019-01-27 21:41:42 / 修改时间：21:50:10" itemprop="dateCreated datePublished" datetime="2019-01-27T21:41:42+08:00">2019-01-27</time>
+              <time title="创建时间：2019-01-27 21:41:42" itemprop="dateCreated datePublished" datetime="2019-01-27T21:41:42+08:00">2019-01-27</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-28 10:31:38" itemprop="dateModified" datetime="2019-01-28T10:31:38+08:00">2019-01-28</time>
               
             
           </span>
@@ -438,8 +450,8 @@
       
         
           
-            <p>hibernate介绍:<br> hibernate是持久层的全ORM框架，封装了JDBC对数据库操作提供了一套API。sessionFactorysession query</p>
-
+            <h1 id="hibernate介绍"><a href="#hibernate介绍" class="headerlink" title="hibernate介绍:"></a>hibernate介绍:</h1><pre><code>hibernate是持久层的全ORM框架，封装了JDBC对数据库操作提供了一套API。sessionFactorysession query
+</code></pre>
           
         
       
@@ -540,12 +552,24 @@
                 
               
 
-              <time title="创建时间：2019-01-27 21:20:33 / 修改时间：21:54:33" itemprop="dateCreated datePublished" datetime="2019-01-27T21:20:33+08:00">2019-01-27</time>
+              <time title="创建时间：2019-01-27 21:20:33" itemprop="dateCreated datePublished" datetime="2019-01-27T21:20:33+08:00">2019-01-27</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-28 11:17:22" itemprop="dateModified" datetime="2019-01-28T11:17:22+08:00">2019-01-28</time>
               
             
           </span>
@@ -599,8 +623,89 @@
       
         
           
-            <h1 id="mybatis介绍"><a href="#mybatis介绍" class="headerlink" title="mybatis介绍:"></a>mybatis介绍:</h1><p>  前生是ibatis，它封装了JDBC的持久层框架，提供了对数据库操作的接口：SqlSessionFactoryBuilder SqlSessionFactory SqlSession<br>  它是半ORM框架（类和表的映射）</p>
-<h2 id="mybatis和Spring整合"><a href="#mybatis和Spring整合" class="headerlink" title="mybatis和Spring整合"></a>mybatis和Spring整合</h2>
+            <h1 id="mybatis介绍"><a href="#mybatis介绍" class="headerlink" title="mybatis介绍:"></a>mybatis介绍:</h1><pre><code>前生是ibatis，它封装了JDBC的持久层框架，提供了对数据库操作的接口：SqlSessionFactoryBuilder SqlSessionFactory SqlSession  
+它是半ORM框架（类和表的映射）
+</code></pre><h2 id="mybatis和Spring整合"><a href="#mybatis和Spring整合" class="headerlink" title="mybatis和Spring整合"></a>mybatis和Spring整合</h2><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><h4 id="1-导jar包："><a href="#1-导jar包：" class="headerlink" title="1.导jar包："></a>1.导jar包：</h4><pre><code>spring-jdb:4.2.4.RELEASE 
+mysql-connector-java:5.1.32
+mybatis:3.2.8
+mybatis-spring:1.2.2
+</code></pre><h4 id="2-配置文件"><a href="#2-配置文件" class="headerlink" title="2.配置文件"></a>2.配置文件</h4><pre><code>&lt;1&gt; 在applicationContext-*.xml 文件中
+
+ &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+ &lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+ xmlns:context=&quot;http://www.springframework.org/schema/context&quot; xmlns:p=&quot;http://www.springframework.org/schema/p&quot;
+ xmlns:aop=&quot;http://www.springframework.org/schema/aop&quot; xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;
+ xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+ xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+ http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+ http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd 
+ http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+ http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd&quot;&gt;
+
+    &lt;!-- 数据库连接池 --&gt;
+    &lt;!-- 加载配置文件 --&gt;
+      &lt;context:property-placeholder location=&quot;classpath*:properties/*.properties&quot; /&gt;
+    &lt;!-- 数据库连接池 jdbc dbcp alibaba等类型--&gt;
+      &lt;bean id=&quot;dataSource&quot; class=&quot;org.springframework.jdbc.datasource.DriverManagerDataSource&quot;&gt;
+        &lt;property name=&quot;url&quot; value=&quot;${jdbc.url}&quot; /&gt;
+        &lt;property name=&quot;username&quot; value=&quot;${jdbc.username}&quot; /&gt;
+        &lt;property name=&quot;password&quot; value=&quot;${jdbc.password}&quot; /&gt;
+        &lt;property name=&quot;driverClassName&quot; value=&quot;${jdbc.driver}&quot; /&gt;
+       &lt;/bean&gt;
+     &lt;!-- 让spring管理sqlsessionfactory 使用mybatis和spring整合包中的 --&gt;
+      &lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
+     &lt;!-- 数据库连接池 --&gt;
+       &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot; /&gt;
+      &lt;!-- 加载mybatis的全局配置文件 --&gt;
+      &lt;/bean&gt;
+      &lt;bean class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
+      &lt;property name=&quot;basePackage&quot; value=&quot;com&quot; /&gt;
+ &lt;/bean&gt;
+
+  &lt;2&gt; 在 properties/*.properties
+       jdbc.driver=com.mysql.jdbc.Driver
+       jdbc.url=jdbc:mysql://localhost:3306/database
+       jdbc.username=root
+       jdbc.password=123456
+</code></pre><h4 id="3-建立映射接口和代理mapper"><a href="#3-建立映射接口和代理mapper" class="headerlink" title="3.建立映射接口和代理mapper"></a>3.建立映射接口和代理mapper</h4><pre><code>(1)接口：
+   public interface UserMapper {
+    //查询所有，返回map类型
+   List&lt;Map&lt;String, Object&gt;&gt; findAll();
+   }
+ (2)*mapper.xml:
+    &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+   &lt;!DOCTYPE mapper    
+   PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;    
+   &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+   &lt;mapper namespace=&quot;com.mapper.UserMapper&quot;&gt;
+    &lt;select id=&quot;findAll&quot; resultType=&quot;Map&quot;&gt;
+      select * from user
+    &lt;/select&gt;
+   &lt;/mapper&gt;
+</code></pre><h4 id="4-测试"><a href="#4-测试" class="headerlink" title="4.测试"></a>4.测试</h4><pre><code>public class myBatisTest {
+ ApplicationContext ctx;
+  @Before
+ public void setUp() throws Exception {
+    //手动启动Spring容器
+  ctx = new ClassPathXmlApplicationContext(
+       &quot;spring/applicationContext-mybatis.xml&quot;);
+ }
+
+   @Test
+  public void test1(){
+  /**
+   * mybatis和hibernate都是持久层的框架（对jdbc的封装），都是ORM。
+   * mybatis是半ORM，专注SQL的编写,对数据库的操作更灵活
+   * hibernate是全ORM，不需要写SQL
+   */
+    UserMapper mapper=(UserMapper) ctx.getBean(&quot;userMapper&quot;);
+    List&lt;Map&lt;String, Object&gt;&gt; user=mapper.findAll();
+      for(Map&lt;String, Object&gt; u:user) {
+         System.out.println(u);
+      }
+    }
+ }
+</code></pre><h4 id="注意：mybatis映射是有规范的，接口的包名必须和代理mapper文件名一一对应-，反之会找不到该映射文件"><a href="#注意：mybatis映射是有规范的，接口的包名必须和代理mapper文件名一一对应-，反之会找不到该映射文件" class="headerlink" title="注意：mybatis映射是有规范的，接口的包名必须和代理mapper文件名一一对应 ，反之会找不到该映射文件"></a>注意：mybatis映射是有规范的，接口的包名必须和代理mapper文件名一一对应 ，反之会找不到该映射文件</h4>
           
         
       
@@ -701,12 +806,24 @@
                 
               
 
-              <time title="创建时间：2019-01-27 20:29:55 / 修改时间：21:19:33" itemprop="dateCreated datePublished" datetime="2019-01-27T20:29:55+08:00">2019-01-27</time>
+              <time title="创建时间：2019-01-27 20:29:55" itemprop="dateCreated datePublished" datetime="2019-01-27T20:29:55+08:00">2019-01-27</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-28 10:28:30" itemprop="dateModified" datetime="2019-01-28T10:28:30+08:00">2019-01-28</time>
               
             
           </span>
@@ -761,11 +878,11 @@
         
           
             <h1 id="Spring介绍"><a href="#Spring介绍" class="headerlink" title="Spring介绍:"></a>Spring介绍:</h1><pre><code>Spring是一个轻量级的框架，用于企业级开发。Spring包含Spring容器、IOC、AOP
-优点：简化开发，解耦合。
-</code></pre><h2 id="Spring容器"><a href="#Spring容器" class="headerlink" title="Spring容器:"></a>Spring容器:</h2><p>   管理类（bean)</p>
-<h2 id="IOC"><a href="#IOC" class="headerlink" title="IOC:"></a>IOC:</h2><p>   控制反转，IOC是目标，DI（依赖注入）是手段。</p>
-<h2 id="AOP"><a href="#AOP" class="headerlink" title="AOP:"></a>AOP:</h2><p>   面向切面，将项目中的一段业务提出来单独处理。</p>
-<h3 id="Spring提供了哪些注解？"><a href="#Spring提供了哪些注解？" class="headerlink" title="Spring提供了哪些注解？"></a>Spring提供了哪些注解？</h3><pre><code>@controller  @service @repository @autowired @compent 
+优点：简化开发，解耦合,整合第三方框架。
+</code></pre><h2 id="Spring容器"><a href="#Spring容器" class="headerlink" title="Spring容器:"></a>Spring容器:</h2><pre><code>管理类（bean)
+</code></pre><h2 id="IOC"><a href="#IOC" class="headerlink" title="IOC:"></a>IOC:</h2><pre><code>控制反转，IOC是目标，DI（依赖注入）是手段。
+</code></pre><h2 id="AOP"><a href="#AOP" class="headerlink" title="AOP:"></a>AOP:</h2><pre><code>面向切面，将项目中的一段业务提出来单独处理。
+</code></pre><h3 id="Spring提供了哪些注解？"><a href="#Spring提供了哪些注解？" class="headerlink" title="Spring提供了哪些注解？"></a>Spring提供了哪些注解？</h3><pre><code>@controller  @service @repository @autowired @compent 
 </code></pre>
           
         
