@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="springMVC介绍基于MVC设计模式的web层的框架。 什么是mvc模式？模型（model），视图（view），控制器（controller） Springmvc的执行流程    / 浏览器发出请求 ——&amp;gt; DispatcherServlet（接受请求，转发） ——&amp;gt; handleMapping ——&amp;gt; controller（modelAndView) 用户">
-<meta name="keywords" content="springMVC">
+  <meta name="description" content="项目常见问题思考我们目前的系统已经实现了广告后台管理和广告前台展示，但是对于首页每天有大量的人访问，对数据库造成很大的访问压力，甚至是瘫痪。那如何解决呢？我们通常的做法有两种：一种是数据缓存、一种是网页静态化。 Redisredis是一款开源的Key-Value数据库，运行在内存中，由ANSI C编写。企业开发通常采用Redis来实现缓存。它支持存储的value类型相对更多，包括string(字符">
+<meta name="keywords" content="redis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="springMVC">
-<meta property="og:url" content="http://yoursite.com/2019/01/28/springMVC/index.html">
+<meta property="og:title" content="redis">
+<meta property="og:url" content="http://yoursite.com/2019/02/01/redis/index.html">
 <meta property="og:site_name" content="Anne Blog">
-<meta property="og:description" content="springMVC介绍基于MVC设计模式的web层的框架。 什么是mvc模式？模型（model），视图（view），控制器（controller） Springmvc的执行流程    / 浏览器发出请求 ——&amp;gt; DispatcherServlet（接受请求，转发） ——&amp;gt; handleMapping ——&amp;gt; controller（modelAndView) 用户">
+<meta property="og:description" content="项目常见问题思考我们目前的系统已经实现了广告后台管理和广告前台展示，但是对于首页每天有大量的人访问，对数据库造成很大的访问压力，甚至是瘫痪。那如何解决呢？我们通常的做法有两种：一种是数据缓存、一种是网页静态化。 Redisredis是一款开源的Key-Value数据库，运行在内存中，由ANSI C编写。企业开发通常采用Redis来实现缓存。它支持存储的value类型相对更多，包括string(字符">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-28T05:39:07.554Z">
+<meta property="og:updated_time" content="2019-02-02T04:59:24.782Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="springMVC">
-<meta name="twitter:description" content="springMVC介绍基于MVC设计模式的web层的框架。 什么是mvc模式？模型（model），视图（view），控制器（controller） Springmvc的执行流程    / 浏览器发出请求 ——&amp;gt; DispatcherServlet（接受请求，转发） ——&amp;gt; handleMapping ——&amp;gt; controller（modelAndView) 用户">
+<meta name="twitter:title" content="redis">
+<meta name="twitter:description" content="项目常见问题思考我们目前的系统已经实现了广告后台管理和广告前台展示，但是对于首页每天有大量的人访问，对数据库造成很大的访问压力，甚至是瘫痪。那如何解决呢？我们通常的做法有两种：一种是数据缓存、一种是网页静态化。 Redisredis是一款开源的Key-Value数据库，运行在内存中，由ANSI C编写。企业开发通常采用Redis来实现缓存。它支持存储的value类型相对更多，包括string(字符">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/01/28/springMVC/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/01/redis/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>springMVC | Anne Blog</title>
+  <title>redis | Anne Blog</title>
   
 
 
@@ -335,7 +335,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/28/springMVC/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/01/redis/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="anne">
@@ -352,7 +352,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">springMVC
+          <h2 class="post-title" itemprop="name headline">redis
 
               
             
@@ -378,12 +378,24 @@
                 
               
 
-              <time title="创建时间：2019-01-28 12:05:38 / 修改时间：13:39:07" itemprop="dateCreated datePublished" datetime="2019-01-28T12:05:38+08:00">2019-01-28</time>
+              <time title="创建时间：2019-02-01 20:23:59" itemprop="dateCreated datePublished" datetime="2019-02-01T20:23:59+08:00">2019-02-01</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-02-02 12:59:24" itemprop="dateModified" datetime="2019-02-02T12:59:24+08:00">2019-02-02</time>
               
             
           </span>
@@ -400,7 +412,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/spring/" itemprop="url" rel="index"><span itemprop="name">spring</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/缓存/" itemprop="url" rel="index"><span itemprop="name">缓存</span></a></span>
 
                 
                 
@@ -418,8 +430,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
             
-                <a href="/2019/01/28/springMVC/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2019/01/28/springMVC/" itemprop="commentCount"></span>
+                <a href="/2019/02/01/redis/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2019/02/01/redis/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -447,93 +459,12 @@
       
 
       
-        <h1 id="springMVC介绍"><a href="#springMVC介绍" class="headerlink" title="springMVC介绍"></a>springMVC介绍</h1><pre><code>基于MVC设计模式的web层的框架。
-</code></pre><h2 id="什么是mvc模式？"><a href="#什么是mvc模式？" class="headerlink" title="什么是mvc模式？"></a>什么是mvc模式？</h2><pre><code>模型（model），视图（view），控制器（controller）
-</code></pre><h2 id="Springmvc的执行流程"><a href="#Springmvc的执行流程" class="headerlink" title="Springmvc的执行流程"></a>Springmvc的执行流程</h2><pre><code>    / 浏览器发出请求 ——&gt; DispatcherServlet（接受请求，转发） ——&gt; handleMapping ——&gt; controller（modelAndView)
-用户                                                                                 |       
-    \ 浏览器接受响应&lt;——  DispatcherServlet                                   &lt;——    &lt;——|
-                       |  |      |  |      
-                     view渲染   视图解析器(视图结果)
-</code></pre><h2 id="Springmvc的配置"><a href="#Springmvc的配置" class="headerlink" title="Springmvc的配置"></a>Springmvc的配置</h2><p>（1）在web.xml中</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;web-app xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-xmlns=&quot;http://java.sun.com/xml/ns/javaee&quot;
-xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&quot;
-version=&quot;2.5&quot;&gt;
-&lt;display-name&gt;sringmvc-mybatis&lt;/display-name&gt;
-&lt;welcome-file-list&gt;
-&lt;welcome-file&gt;index.html&lt;/welcome-file&gt;
-&lt;/welcome-file-list&gt;
-&lt;filter&gt;
-&lt;filter-name&gt;encoding&lt;/filter-name&gt;
-&lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;
-&lt;init-param&gt;
-&lt;param-name&gt;encoding&lt;/param-name&gt;
-&lt;param-value&gt;UTF-8&lt;/param-value&gt;
-&lt;/init-param&gt;
-&lt;/filter&gt;
-&lt;filter-mapping&gt;
-&lt;filter-name&gt;encoding&lt;/filter-name&gt;
-&lt;url-pattern&gt;/*&lt;/url-pattern&gt;
-&lt;/filter-mapping&gt;
-
-&lt;servlet&gt;
-&lt;servlet-name&gt;mvc&lt;/servlet-name&gt;
-  &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
-&lt;init-param&gt;
-&lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
-&lt;param-value&gt;classpath:spring/spring-servlet.xml&lt;/param-value&gt;
-&lt;/init-param&gt;
-&lt;/servlet&gt;
-&lt;servlet-mapping&gt;
-&lt;servlet-name&gt;mvc&lt;/servlet-name&gt;
-&lt;url-pattern&gt;*.do&lt;/url-pattern&gt;
-&lt;/servlet-mapping&gt;
-
-&lt;context-param&gt;
-&lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
-&lt;param-value&gt;classpath*:spring/applicationContext*.xml&lt;/param-value&gt;
-&lt;/context-param&gt;
-&lt;listener&gt;
-&lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;
-&lt;/listener&gt;
-&lt;/web-app&gt;
-</code></pre><p> （2）创建spring/spring-servlet.xml</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
-xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; 
-xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
-xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
-xsi:schemaLocation=&quot;
-http://www.springframework.org/schema/beans 
-http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-http://www.springframework.org/schema/context 
-http://www.springframework.org/schema/context/spring-context-3.0.xsd
-http://www.springframework.org/schema/mvc 
-http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd&quot;&gt;
-&lt;!-- 组件注解扫描 --&gt;
-&lt;context:component-scan base-package=&quot;com&quot; /&gt;
-
-&lt;!-- &lt;mvc:annotation-driven&gt;
-&lt;mvc:message-converters register-defaults=&quot;true&quot;&gt;
-&lt;bean class=&quot;com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter&quot;&gt;  
-&lt;property name=&quot;supportedMediaTypes&quot; value=&quot;application/json&quot;/&gt;
-&lt;property name=&quot;features&quot;&gt;
-&lt;array&gt;
-&lt;value&gt;WriteMapNullValue&lt;/value&gt;
-&lt;value&gt;WriteDateUseDateFormat&lt;/value&gt;
-&lt;/array&gt;
-&lt;/property&gt;
-&lt;/bean&gt;
-&lt;/mvc:message-converters&gt;  
-&lt;/mvc:annotation-driven&gt; --&gt;
-&lt;!-- @resposeBody注解对Jason的支持，需要开启注解驱动 --&gt;
-&lt;mvc:annotation-driven/&gt;
-&lt;!-- &lt;mvc:message-converters&gt;
-&lt;bean class=&quot;org.example.MyHttpMessageConverter&quot;/&gt;
-&lt;bean class=&quot;org.example.MyOtherHttpMessageConverter&quot;/&gt;
-&lt;/mvc:message-converters&gt; --&gt;
-&lt;/beans&gt;
+        <p>项目常见问题思考<br>我们目前的系统已经实现了广告后台管理和广告前台展示，但是对于首页每天有大量的人访问，对数据库造成很大的访问压力，甚至是瘫痪。那如何解决呢？我们通常的做法有两种：一种是数据缓存、一种是网页静态化。</p>
+<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><pre><code>redis是一款开源的Key-Value数据库，运行在内存中，由ANSI C编写。企业开发通常采用Redis来实现缓存。它支持存储的value类型相对更多，包括string(字符串)、list(链表)、set(集合)、zset(sorted set --有序集合)和hash（哈希类型）,同类的产还有memcache 、memcached 、MongoDB等。
+</code></pre><h1 id="Jedis"><a href="#Jedis" class="headerlink" title="Jedis"></a>Jedis</h1><pre><code>Jedis是Redis官方推出的一款面向Java的客户端，提供了很多接口供Java语言调用。可以在Redis官网下载，当然还有一些开源爱好者提供的客户端，如Jredis、SRP等等，推荐使用Jedis。
+</code></pre><h1 id="Spring-Data-Redis"><a href="#Spring-Data-Redis" class="headerlink" title="Spring Data Redis"></a>Spring Data Redis</h1><pre><code>Spring-data-redis是spring大家族的一部分，提供了在srping应用中通过简单的配置访问redis服务，对reids底层开发包(Jedis,  JRedis, and RJC)进行了高度封装
+RedisTemplate提供了redis各种操作、异常处理及序列化，支持发布订阅，并对spring 3.1 cache进行了实现。
+spring-data-redis针对jedis提供了如下功能： 1.连接池自动管理，提供了一个高度封装的“RedisTemplate”类 2.针对jedis客户端中大量api进行了归类封装,将同一类型操作封装为operation接口 ValueOperations：简单K-V操作 SetOperations：set类型数据操作 ZSetOperations：zset类型数据操作 HashOperations：针对map类型的数据操作 ListOperations：针对list类型的数据操作
 </code></pre>
       
     </div>
@@ -557,7 +488,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd&quot;&gt;
       
         <div class="post-tags">
           
-            <a href="/tags/springMVC/" rel="tag"># springMVC</a>
+            <a href="/tags/redis/" rel="tag"># redis</a>
           
         </div>
       
@@ -570,8 +501,8 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd&quot;&gt;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/27/hibernate/" rel="next" title="hibernate">
-                <i class="fa fa-chevron-left"></i> hibernate
+              <a href="/2019/02/01/sping事务/" rel="next" title="sping事务">
+                <i class="fa fa-chevron-left"></i> sping事务
               </a>
             
           </div>
@@ -580,8 +511,8 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd&quot;&gt;
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/30/dubbox/" rel="prev" title="dubbox">
-                dubbox <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/18/java设计模式/" rel="prev" title="java设计模式">
+                java设计模式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -785,7 +716,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd&quot;&gt;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#springMVC介绍"><span class="nav-number">1.</span> <span class="nav-text">springMVC介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是mvc模式？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是mvc模式？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Springmvc的执行流程"><span class="nav-number">1.2.</span> <span class="nav-text">Springmvc的执行流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Springmvc的配置"><span class="nav-number">1.3.</span> <span class="nav-text">Springmvc的配置</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis"><span class="nav-number">1.</span> <span class="nav-text">Redis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Jedis"><span class="nav-number">2.</span> <span class="nav-text">Jedis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-Data-Redis"><span class="nav-number">3.</span> <span class="nav-text">Spring Data Redis</span></a></li></ol></div>
             
 
           </div>
