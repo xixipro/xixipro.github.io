@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="spring事务使用sping事务有很多种方法，网上的资料五花八门暂时参考以下。[参考1] (https://www.cnblogs.com/xym4869/p/8976949.html)[参考] (https://www.cnblogs.com/yixianyixian/p/8372832.html)">
+  <meta name="description" content="spring事务1.添加事务配置文件 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;beans xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSc">
 <meta name="keywords" content="事务">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sping事务">
 <meta property="og:url" content="http://yoursite.com/2019/02/01/sping事务/index.html">
 <meta property="og:site_name" content="Anne Blog">
-<meta property="og:description" content="spring事务使用sping事务有很多种方法，网上的资料五花八门暂时参考以下。[参考1] (https://www.cnblogs.com/xym4869/p/8976949.html)[参考] (https://www.cnblogs.com/yixianyixian/p/8372832.html)">
+<meta property="og:description" content="spring事务1.添加事务配置文件 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;beans xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSc">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-01T11:52:53.478Z">
+<meta property="og:updated_time" content="2019-02-18T14:57:39.100Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sping事务">
-<meta name="twitter:description" content="spring事务使用sping事务有很多种方法，网上的资料五花八门暂时参考以下。[参考1] (https://www.cnblogs.com/xym4869/p/8976949.html)[参考] (https://www.cnblogs.com/yixianyixian/p/8372832.html)">
+<meta name="twitter:description" content="spring事务1.添加事务配置文件 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;beans xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSc">
 
 
 
@@ -378,12 +378,24 @@
                 
               
 
-              <time title="创建时间：2019-02-01 18:57:24 / 修改时间：19:52:53" itemprop="dateCreated datePublished" datetime="2019-02-01T18:57:24+08:00">2019-02-01</time>
+              <time title="创建时间：2019-02-01 18:57:24" itemprop="dateCreated datePublished" datetime="2019-02-01T18:57:24+08:00">2019-02-01</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-02-18 22:57:39" itemprop="dateModified" datetime="2019-02-18T22:57:39+08:00">2019-02-18</time>
               
             
           </span>
@@ -447,7 +459,30 @@
       
 
       
-        <h1 id="spring事务"><a href="#spring事务" class="headerlink" title="spring事务"></a>spring事务</h1><p>使用sping事务有很多种方法，网上的资料五花八门暂时参考以下。<br>[参考1] (<a href="https://www.cnblogs.com/xym4869/p/8976949.html" target="_blank" rel="noopener">https://www.cnblogs.com/xym4869/p/8976949.html</a>)<br>[参考] (<a href="https://www.cnblogs.com/yixianyixian/p/8372832.html" target="_blank" rel="noopener">https://www.cnblogs.com/yixianyixian/p/8372832.html</a>)</p>
+        <h1 id="spring事务"><a href="#spring事务" class="headerlink" title="spring事务"></a>spring事务</h1><p>1.添加事务配置文件</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:p=&quot;http://www.springframework.org/schema/p&quot;
+xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;
+xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
+xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;
+
+
+&lt;!-- 事务管理器  --&gt;  
+&lt;bean id=&quot;transactionManager&quot; class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;  
+&lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot; /&gt;  
+&lt;/bean&gt;  
+
+&lt;!-- 开启事务控制的注解支持 --&gt;  
+&lt;tx:annotation-driven transaction-manager=&quot;transactionManager&quot;/&gt;
+
+&lt;/beans&gt;
+</code></pre><p>2.在方法或者类上加上 @Transaction 注解</p>
+<p>使用sping事务有很多种方法，网上的资料五花八门暂时参考以下。<br>[参考1] (<a href="https://www.cnblogs.com/xym4869/p/8976949.html" target="_blank" rel="noopener">https://www.cnblogs.com/xym4869/p/8976949.html</a>)<br>[参考] (<a href="https://www.cnblogs.com/yixianyixian/p/8372832.html" target="_blank" rel="noopener">https://www.cnblogs.com/yixianyixian/p/8372832.html</a>)</p>
 
       
     </div>
