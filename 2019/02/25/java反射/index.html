@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="Java反射JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制. 反射的使用1.获取Class对象的三种方式1.1 Object  ——〉getClass( );Student stu=new Student( );//这一new 产生一个St">
+  <meta name="description" content="Java反射JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法； 对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制. 反射的使用1.获取Class对象的三种方式1.1 Object  ——〉getClass( );Student stu=new Student( );//这一new 产生一个S">
 <meta name="keywords" content="java反射">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java反射">
 <meta property="og:url" content="http://yoursite.com/2019/02/25/java反射/index.html">
 <meta property="og:site_name" content="Anne Blog">
-<meta property="og:description" content="Java反射JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制. 反射的使用1.获取Class对象的三种方式1.1 Object  ——〉getClass( );Student stu=new Student( );//这一new 产生一个St">
+<meta property="og:description" content="Java反射JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法； 对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制. 反射的使用1.获取Class对象的三种方式1.1 Object  ——〉getClass( );Student stu=new Student( );//这一new 产生一个S">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-25T05:25:38.129Z">
+<meta property="og:updated_time" content="2019-02-25T05:31:05.595Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java反射">
-<meta name="twitter:description" content="Java反射JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制. 反射的使用1.获取Class对象的三种方式1.1 Object  ——〉getClass( );Student stu=new Student( );//这一new 产生一个St">
+<meta name="twitter:description" content="Java反射JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法； 对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制. 反射的使用1.获取Class对象的三种方式1.1 Object  ——〉getClass( );Student stu=new Student( );//这一new 产生一个S">
 
 
 
@@ -378,7 +378,7 @@
                 
               
 
-              <time title="创建时间：2019-02-25 12:48:24 / 修改时间：13:25:38" itemprop="dateCreated datePublished" datetime="2019-02-25T12:48:24+08:00">2019-02-25</time>
+              <time title="创建时间：2019-02-25 12:48:24 / 修改时间：13:31:05" itemprop="dateCreated datePublished" datetime="2019-02-25T12:48:24+08:00">2019-02-25</time>
             
 
             
@@ -429,7 +429,8 @@
       
 
       
-        <h1 id="Java反射"><a href="#Java反射" class="headerlink" title="Java反射"></a>Java反射</h1><pre><code>JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制.
+        <h1 id="Java反射"><a href="#Java反射" class="headerlink" title="Java反射"></a>Java反射</h1><pre><code>JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；
+对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制.
 </code></pre><h1 id="反射的使用"><a href="#反射的使用" class="headerlink" title="反射的使用"></a>反射的使用</h1><h2 id="1-获取Class对象的三种方式"><a href="#1-获取Class对象的三种方式" class="headerlink" title="1.获取Class对象的三种方式"></a>1.获取Class对象的三种方式</h2><h3 id="1-1-Object-——〉getClass"><a href="#1-1-Object-——〉getClass" class="headerlink" title="1.1 Object  ——〉getClass( );"></a>1.1 Object  ——〉getClass( );</h3><pre><code>Student stu=new Student( );//这一new 产生一个Student对象，一个Class对象。
 Class class1=stu.getClass( );//获取Class对象
 </code></pre><h3 id="1-2-任何数据类型（包括数据基本类型）都有个”静态”的class属性；"><a href="#1-2-任何数据类型（包括数据基本类型）都有个”静态”的class属性；" class="headerlink" title="1.2  任何数据类型（包括数据基本类型）都有个”静态”的class属性；"></a>1.2  任何数据类型（包括数据基本类型）都有个”静态”的class属性；</h3><pre><code>Class  class2   =Student.class;
@@ -496,7 +497,8 @@ System.out.println(m);
 m.setAccessible(true);//解除私有限定
 Object result = m.invoke(obj, 20);//需要两个参数，一个是要调用的对象（获取有反射），一个是实参
 System.out.println(&quot;返回值：&quot; + result);
-</code></pre>
+</code></pre><p><a href="https://blog.csdn.net/sinat_38259539/article/details/71799078" target="_blank" rel="noopener">参考</a></p>
+
       
     </div>
 
