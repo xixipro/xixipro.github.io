@@ -244,7 +244,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">12</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">13</span></a>
 
   </li>
         
@@ -282,7 +282,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">13</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">14</span></a>
 
   </li>
 
@@ -318,6 +318,216 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/03/算法/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="anne">
+      <meta itemprop="description" content="用心感受生活">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anne Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/03/03/算法/" class="post-title-link" itemprop="url">算法</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-03 21:39:12 / 修改时间：23:27:22" itemprop="dateCreated datePublished" datetime="2019-03-03T21:39:12+08:00">2019-03-03</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-数据类型"><a href="#1-数据类型" class="headerlink" title="1.数据类型"></a>1.数据类型</h1><pre><code>Java中有基本数据类型( byte、short、chat、int、long、double、float、boolean )和引用类型( String )
+</code></pre><h1 id="2-数组"><a href="#2-数组" class="headerlink" title="2.数组"></a>2.数组</h1><pre><code>数组是相同类型的变量按顺序组成的一种复合数据类型，称这些相同类型的变量为数组的元素或单元。
+数组通过数组名加索引来使用数组的元素。
+</code></pre><h2 id="2-1数组-array-的创建方式"><a href="#2-1数组-array-的创建方式" class="headerlink" title="2.1数组(array)的创建方式"></a>2.1数组(array)的创建方式</h2><pre><code>public static void main(String[] args) {
+//创建数组的第一种方法
+int[] arr=new int[6];
+int intValue=arr[5];
+//System.out.println(intValue);
+//创建数组的第二种方法
+int[] x={1,2,3,4};
+//System.out.println(x[1]);
+
+//创建数组的第三种方法。
+int[] y= new int[]{1,2,3,4,5};
+int m=0;
+boolean length = isLength(m,y);
+if(length){
+System.out.println(y[m]);
+}else{
+System.err.println(&quot;数组标越界&quot;);
+}    
+
+}
+//判断数组下标是否越界
+public static boolean isLength(int m,int arr[]){
+boolean flag=false;
+int length = arr.length;
+if(m&lt;length)
+flag=true;
+return flag;
+}
+</code></pre><h1 id="3-集合"><a href="#3-集合" class="headerlink" title="3.集合"></a>3.集合</h1><pre><code>1.当我们需要保持一组一样（类型相同）的元素的时候，我们应该使用一个容器来保存，数组就是这样一个容器。
+2.数组一旦定义，长度将不能再变化。
+3.然而在我们的开发实践中，经常需要保存一些变长的数据集合，于是，我们需要一些能够动态增长长度的容器来保存我们的数据。
+4.而我们需要对数据的保存的逻辑可能各种各样，于是就有了各种各样的数据结构。我们将数据结构在Java中实现，于是就有了我们的集合框架。
+</code></pre><h1 id="4-数据转换"><a href="#4-数据转换" class="headerlink" title="4.数据转换"></a>4.数据转换</h1><h2 id="4-1基本数据转换成String类型-String的静态方法"><a href="#4-1基本数据转换成String类型-String的静态方法" class="headerlink" title="4.1基本数据转换成String类型(String的静态方法)"></a>4.1基本数据转换成String类型(String的静态方法)</h2><pre><code>int a=3433;
+System.out.println(String.valueOf(a)+2);
+</code></pre><p>输出：</p>
+<pre><code>34332
+</code></pre><h2 id="4-2String类型转换成基本数据类型"><a href="#4-2String类型转换成基本数据类型" class="headerlink" title="4.2String类型转换成基本数据类型"></a>4.2String类型转换成基本数据类型</h2><pre><code>String a=&quot;47347&quot;;
+System.out.println(Integer.parseInt(a)+8);
+</code></pre><p>输出：</p>
+<pre><code>47355
+</code></pre><h2 id="4-3数组转换成集合-Arrays"><a href="#4-3数组转换成集合-Arrays" class="headerlink" title="4.3数组转换成集合(Arrays)"></a>4.3数组转换成集合(Arrays)</h2><pre><code>List&lt;String&gt; list=Arrays.asList(str1);//将数组转换成集合
+</code></pre><h2 id="4-4集合转换成数组"><a href="#4-4集合转换成数组" class="headerlink" title="4.4集合转换成数组"></a>4.4集合转换成数组</h2><pre><code>// 当list中的数据类型都一致时可以将list转化为数组
+    List list = new ArrayList();
+    list.add(&quot;a&quot;);
+    list.add(&quot;b&quot;);
+    Object[] array = list.toArray();
+</code></pre><p>练习1：将”I LOVE JAVA” 输出为”JAVA LOVE I”</p>
+<pre><code>public class Test1{
+    public void getStr(){
+    String str=&quot;I LOVE JAVA&quot;;
+    String[] str1=str.slipt(&quot; &quot;);
+    List&lt;String&gt; list=Arrays.asList(str1); //将数组转为list
+    Collections.reverse(list); //使用到Collections工具类的方法
+    StringBuild sb=new StringBuild();
+    for（String str2:list）{
+    sb.append(str2+&quot; &quot;);
+        }
+        system.out.println(sb);
+    }
+
+public static main(String[]args){
+    Test1 te=new Test1();
+    te.getStr();
+    }
+}
+</code></pre>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -2312,259 +2522,6 @@ ApplicationContext cont=new ClassPathXmlApplicationContext(&quot;spring/applicat
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/27/mybatis/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="anne">
-      <meta itemprop="description" content="用心感受生活">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Anne Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/27/mybatis/" class="post-title-link" itemprop="url">mybatis</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-27 21:20:33" itemprop="dateCreated datePublished" datetime="2019-01-27T21:20:33+08:00">2019-01-27</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-28 20:59:28" itemprop="dateModified" datetime="2019-01-28T20:59:28+08:00">2019-01-28</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/持久层框架/" itemprop="url" rel="index"><span itemprop="name">持久层框架</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="mybatis介绍"><a href="#mybatis介绍" class="headerlink" title="mybatis介绍:"></a>mybatis介绍:</h1><pre><code>前生是ibatis，它封装了JDBC的持久层框架，提供了对数据库操作的接口：SqlSessionFactoryBuilder SqlSessionFactory SqlSession  
-它是半ORM框架（类和表的映射）
-</code></pre><h2 id="mybatis和Spring整合"><a href="#mybatis和Spring整合" class="headerlink" title="mybatis和Spring整合"></a>mybatis和Spring整合</h2><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><h4 id="1-导jar包："><a href="#1-导jar包：" class="headerlink" title="1.导jar包："></a>1.导jar包：</h4><pre><code>spring-jdbc:4.2.4.RELEASE 
-mysql-connector-java:5.1.32
-mybatis:3.2.8
-mybatis-spring:1.2.2
-</code></pre><h4 id="2-配置文件"><a href="#2-配置文件" class="headerlink" title="2.配置文件"></a>2.配置文件</h4><p><1> 在applicationContext-*.xml 文件中</1></p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
-xmlns:context=&quot;http://www.springframework.org/schema/context&quot; xmlns:p=&quot;http://www.springframework.org/schema/p&quot;
-xmlns:aop=&quot;http://www.springframework.org/schema/aop&quot; xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;
-xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
-http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd 
-http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
-http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd&quot;&gt;
-
-   &lt;!-- 数据库连接池 --&gt;
-   &lt;!-- 加载配置文件 --&gt;
-     &lt;context:property-placeholder location=&quot;classpath*:properties/*.properties&quot; /&gt;
-   &lt;!-- 数据库连接池 jdbc dbcp 等类型--&gt;
-     &lt;bean id=&quot;dataSource&quot; class=&quot;org.springframework.jdbc.datasource.DriverManagerDataSource&quot;&gt;
-       &lt;property name=&quot;url&quot; value=&quot;${jdbc.url}&quot; /&gt;
-       &lt;property name=&quot;username&quot; value=&quot;${jdbc.username}&quot; /&gt;
-       &lt;property name=&quot;password&quot; value=&quot;${jdbc.password}&quot; /&gt;
-       &lt;property name=&quot;driverClassName&quot; value=&quot;${jdbc.driver}&quot; /&gt;
-      &lt;/bean&gt;
-    &lt;!-- 让spring管理sqlsessionfactory 使用mybatis和spring整合包中的 --&gt;
-     &lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
-    &lt;!-- 数据库连接池 --&gt;
-      &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot; /&gt;
-     &lt;!-- 加载mybatis的全局配置文件 --&gt;
-     &lt;/bean&gt;
-     &lt;bean class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
-      &lt;property name=&quot;basePackage&quot; value=&quot;com&quot; /&gt;
-     &lt;/bean&gt;
-&lt;/bean&gt;
-</code></pre><p><2> 在 properties/*.properties</2></p>
-<pre><code>jdbc.driver=com.mysql.jdbc.Driver
-jdbc.url=jdbc:mysql://localhost:3306/database
-jdbc.username=root
-jdbc.password=123456
-</code></pre><h4 id="3-建立映射接口和代理mapper"><a href="#3-建立映射接口和代理mapper" class="headerlink" title="3.建立映射接口和代理mapper"></a>3.建立映射接口和代理mapper</h4><p>  (1)接口：</p>
-<pre><code>public interface UserMapper {
- //查询所有，返回map类型
-List&lt;Map&lt;String, Object&gt;&gt; findAll();
-}
-</code></pre><p>   (2)*mapper.xml:</p>
-<pre><code> &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
-&lt;!DOCTYPE mapper    
-PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;    
-&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
-&lt;mapper namespace=&quot;com.mapper.UserMapper&quot;&gt;
- &lt;select id=&quot;findAll&quot; resultType=&quot;Map&quot;&gt;
-   select * from user
- &lt;/select&gt;
-&lt;/mapper&gt;
-</code></pre><h4 id="4-测试"><a href="#4-测试" class="headerlink" title="4.测试"></a>4.测试</h4><pre><code>public class myBatisTest {
- ApplicationContext ctx;
-  @Before
- public void setUp() throws Exception {
-    //手动启动Spring容器
-  ctx = new ClassPathXmlApplicationContext(
-       &quot;spring/applicationContext-mybatis.xml&quot;);
- }
-
-   @Test
-  public void test1(){
-  /**
-   * mybatis和hibernate都是持久层的框架（对jdbc的封装），都是ORM。
-   * mybatis是半ORM，专注SQL的编写,对数据库的操作更灵活
-   * hibernate是全ORM，不需要写SQL
-   */
-    UserMapper mapper=(UserMapper) ctx.getBean(&quot;userMapper&quot;);
-    List&lt;Map&lt;String, Object&gt;&gt; user=mapper.findAll();
-      for(Map&lt;String, Object&gt; u:user) {
-         System.out.println(u);
-      }
-    }
- }
-</code></pre><h4 id="注意：mybatis映射是有规范的，接口的包名必须和代理mapper文件名一一对应-，反之会找不到该映射文件"><a href="#注意：mybatis映射是有规范的，接口的包名必须和代理mapper文件名一一对应-，反之会找不到该映射文件" class="headerlink" title="注意：mybatis映射是有规范的，接口的包名必须和代理mapper文件名一一对应 ，反之会找不到该映射文件"></a>注意：mybatis映射是有规范的，接口的包名必须和代理mapper文件名一一对应 ，反之会找不到该映射文件</h4>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2614,7 +2571,7 @@ PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2680,7 +2637,9 @@ PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;
                     
                       
                     
-                    <span class="site-state-item-count">12</span>
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
