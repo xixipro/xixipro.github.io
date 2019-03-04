@@ -379,12 +379,24 @@
                 
               
 
-              <time title="创建时间：2019-03-03 21:39:12 / 修改时间：23:27:22" itemprop="dateCreated datePublished" datetime="2019-03-03T21:39:12+08:00">2019-03-03</time>
+              <time title="创建时间：2019-03-03 21:39:12" itemprop="dateCreated datePublished" datetime="2019-03-03T21:39:12+08:00">2019-03-03</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-04 17:27:44" itemprop="dateModified" datetime="2019-03-04T17:27:44+08:00">2019-03-04</time>
               
             
           </span>
@@ -488,7 +500,50 @@ public static main(String[]args){
     te.getStr();
     }
 }
-</code></pre>
+</code></pre><p>   练习2: 将一组数组eg: {2,3,3,3,6,7,7,8} 里面有几组两个相同的数据</p>
+<h1 id="5-JAVA算法"><a href="#5-JAVA算法" class="headerlink" title="5.JAVA算法"></a>5.JAVA算法</h1><h2 id="5-1排序都有哪几种方法？"><a href="#5-1排序都有哪几种方法？" class="headerlink" title="5.1排序都有哪几种方法？"></a>5.1排序都有哪几种方法？</h2><ol>
+<li>插入排序（直接插入排序、希尔排序）</li>
+<li>交换排序（冒泡排序、快速排序）</li>
+<li>选择排序（直接选择排序、堆排序）</li>
+<li>归并排序</li>
+<li><p>分配排序（箱排序、基数排序）</p>
+<h2 id="5-2-查找有哪些方法？"><a href="#5-2-查找有哪些方法？" class="headerlink" title="5.2 查找有哪些方法？"></a>5.2 查找有哪些方法？</h2></li>
+<li><p>顺序查找(适合于存储结构为顺序储存或链接存储的线性表)<br> 查找s[0]-s[i-1]与key一致的数据</p>
+<pre><code>    public void seach( String[] s,String key,int n){
+    int  i=0;
+    while(i&lt;n &amp;&amp; s[i]!=key){
+    i++
+    if(key==s[i]){
+    return i;
+}
+}
+return -1;
+}
+</code></pre></li>
+<li><p>二分查找<br> 前提条件：二分法查找适用于数据量较大时，但是数据需要先排好顺序。</p>
+<pre><code>public static int search(int[] arr, int key){
+ int start=0;
+ int end=arr.length-1;
+ while (start&lt;=end)
+ {
+ int mid = (end+start)/2;
+ if (key&lt;arr[mid])
+ {
+ end=mid-1;
+ }else if (key&gt;arr[mid]){
+ start=mid+1;
+ }else {
+ return mid;
+ }
+ }
+ return -1;
+ }
+</code></pre></li>
+<li><p>分块查找</p>
+</li>
+<li>二叉排序树查找（二叉查找树）</li>
+</ol>
+
           
         
       
