@@ -244,7 +244,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">13</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">14</span></a>
 
   </li>
         
@@ -282,7 +282,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">14</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">15</span></a>
 
   </li>
 
@@ -318,6 +318,307 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/27/hibernate/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="anne">
+      <meta itemprop="description" content="用心感受生活">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anne Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/01/27/hibernate/" class="post-title-link" itemprop="url">hibernate</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-27 21:41:42" itemprop="dateCreated datePublished" datetime="2019-01-27T21:41:42+08:00">2019-01-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-28 21:26:22" itemprop="dateModified" datetime="2019-01-28T21:26:22+08:00">2019-01-28</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/持久层框架/" itemprop="url" rel="index"><span itemprop="name">持久层框架</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="hibernate介绍"><a href="#hibernate介绍" class="headerlink" title="hibernate介绍:"></a>hibernate介绍:</h1><pre><code>hibernate是持久层的全ORM框架，封装了JDBC对数据库操作提供了一套API。sessionFactorysession query
+</code></pre><h2 id="hibernate和Spring整合"><a href="#hibernate和Spring整合" class="headerlink" title="hibernate和Spring整合"></a>hibernate和Spring整合</h2><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><h4 id="1-导jar包"><a href="#1-导jar包" class="headerlink" title="1.导jar包"></a>1.导jar包</h4><pre><code>mysql-connector-java：5.1.32
+commons-dbcp：1.4
+hibernate-core：5.4.0.Final
+spring-orm：5.1.3.RELEASE
+</code></pre><h4 id="2-配置文件"><a href="#2-配置文件" class="headerlink" title="2.配置文件"></a>2.配置文件</h4><p>(1)配置applicationContext-*.xml</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+ xmlns:context=&quot;http://www.springframework.org/schema/context&quot; xmlns:p=&quot;http://www.springframework.org/schema/p&quot;
+xmlns:aop=&quot;http://www.springframework.org/schema/aop&quot; xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;
+ xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+ xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+  http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd 
+   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd&quot;&gt;
+    &lt;context:component-scan base-package=&quot;com&quot;/&gt;
+ &lt;!-- 数据库连接池 --&gt;
+   &lt;!-- 加载配置文件 --&gt;
+  &lt;context:property-placeholder location=&quot;classpath*:properties/*.properties&quot; /&gt;
+   &lt;!-- 数据库连接池 jdbc dbcp 等类型--&gt;
+  &lt;bean id=&quot;dataSource&quot; class=&quot;org.apache.commons.dbcp.BasicDataSource&quot;&gt;
+    &lt;property name=&quot;url&quot; value=&quot;${jdbc.url}&quot; /&gt;
+    &lt;property name=&quot;username&quot; value=&quot;${jdbc.username}&quot; /&gt;
+    &lt;property name=&quot;password&quot; value=&quot;${jdbc.password}&quot; /&gt;
+    &lt;property name=&quot;driverClassName&quot; value=&quot;${jdbc.driver}&quot; /&gt;
+   &lt;/bean&gt;
+
+  &lt;!-- 让spring管理sessionfactory 使用hibernate和spring整合包中的 --&gt;
+&lt;bean id=&quot;sessionFactory&quot; class=&quot;org.springframework.orm.hibernate5.LocalSessionFactoryBean&quot;&gt;
+ &lt;!-- 数据库连接池 --&gt;
+  &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot; /&gt;
+  &lt;property name=&quot;hibernateProperties&quot;&gt;  
+&lt;props&gt;
+  &lt;prop key=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.MySQLDialect&lt;/prop&gt;  
+   &lt;prop key=&quot;hibernate.hbm2ddl.auto&quot;&gt;update&lt;/prop&gt;  
+   &lt;prop key=&quot;hibernate.show_sql&quot;&gt;true&lt;/prop&gt;  
+   &lt;prop key=&quot;hiberante.format_sql&quot;&gt;true&lt;/prop&gt;  
+  &lt;/props&gt;  
+  &lt;/property&gt; 
+ &lt;property name=&quot;packagesToScan&quot;&gt;
+ &lt;list&gt;
+   &lt;value&gt;com&lt;/value&gt;
+ &lt;/list&gt;
+  &lt;/property&gt;
+   &lt;/bean&gt;
+ &lt;/beans&gt;
+</code></pre><p>（2）配置properties/*.properties文件（参考mybatis)</p>
+<h4 id="3-创建实体类"><a href="#3-创建实体类" class="headerlink" title="3.创建实体类"></a>3.创建实体类</h4><pre><code>@Entity(name=&quot;user&quot;)
+@Table
+public class User implements Serializable{
+/**
+* 
+*/
+private static final long serialVersionUID = 1L;
+@Id
+private String id;
+@Column(columnDefinition = &quot;VARCHAR(255)&quot;)
+private String name;
+@Column(columnDefinition = &quot;VARCHAR(255)&quot;)
+private String age;
+@Column(columnDefinition = &quot;VARCHAR(255)&quot;)
+private String address;
+@Column(columnDefinition = &quot;VARCHAR(255)&quot;)
+private String salary;
+
+
+public String getId() {
+return id;
+}
+public void setId(String id) {
+this.id = id;
+}
+public String getName() {
+return name;
+}
+public void setName(String name) {
+this.name = name;
+}
+public String getAge() {
+return age;
+}
+public void setAge(String age) {
+this.age = age;
+}
+public String getAddress() {
+return address;
+}
+public void setAddress(String address) {
+this.address = address;
+}
+public String getSalary() {
+return salary;
+}
+public void setSalary(String salary) {
+this.salary = salary;
+}
+@Override
+public String toString() {
+return &quot;User [name=&quot; + name + &quot;, age=&quot; + age + &quot;, address=&quot; + address + &quot;, salary=&quot; + salary + &quot;]&quot;;
+}
+
+}
+</code></pre><h4 id="4-创建dao"><a href="#4-创建dao" class="headerlink" title="4.创建dao"></a>4.创建dao</h4><pre><code>@Repository
+public class UserDao {
+
+@Autowired
+SessionFactory sessionFactory;
+public List&lt;User&gt; findAll(){
+Session session=sessionFactory.openSession();
+String query=&quot;from  user&quot;;
+List&lt;User&gt; result=session.createQuery(query).list();
+   return result;
+  }
+}
+</code></pre><h4 id="5-测试"><a href="#5-测试" class="headerlink" title="5. 测试"></a>5. 测试</h4><pre><code>public class Demo1 {
+
+@Test
+public void hibernate() {
+ApplicationContext cont=new ClassPathXmlApplicationContext(&quot;spring/applicationContext-hibernate.xml&quot;);
+ UserDao userDao=cont.getBean(UserDao.class);
+ List&lt;User&gt;result=userDao.findAll();
+  for(User user:result) {
+    System.out.println(user);
+  }
+//DataSource dataSource=(DataSource) cont.getBean(DataSource.class);
+// System.out.println(dataSource.toString());
+ }
+}
+</code></pre>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1129,7 +1430,7 @@ AspectJ是一个基于Java语言的AOP框架，Spring2.0开始，Spring AOP引�
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1197,7 +1498,9 @@ AspectJ是一个基于Java语言的AOP框架，Spring2.0开始，Spring AOP引�
                     
                       
                     
-                    <span class="site-state-item-count">13</span>
+                      
+                    
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
