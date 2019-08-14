@@ -244,7 +244,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">16</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">17</span></a>
 
   </li>
         
@@ -263,7 +263,7 @@
       
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">8</span></a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">9</span></a>
 
   </li>
         
@@ -282,7 +282,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">17</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">18</span></a>
 
   </li>
 
@@ -318,6 +318,301 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/31/nginx/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="anne">
+      <meta itemprop="description" content="用心感受生活">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anne Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/01/31/nginx/" class="post-title-link" itemprop="url">nginx</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-31 09:24:57 / 修改时间：11:29:44" itemprop="dateCreated datePublished" datetime="2019-01-31T09:24:57+08:00">2019-01-31</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/WEB服务器/" itemprop="url" rel="index"><span itemprop="name">WEB服务器</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="什么是Nginx"><a href="#什么是Nginx" class="headerlink" title="什么是Nginx"></a>什么是Nginx</h1><pre><code>Nginx 是一款高性能的 http 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。由俄罗斯的程序设计师伊戈尔·西索夫（Igor Sysoev）所开发，官方测试 nginx 能够支支撑 5 万并发链接，并且 cpu、内存等资源消耗却非常低，运行非常稳定。
+</code></pre><p>Nginx 应用场景：</p>
+<pre><code>1、http 服务器。Nginx 是一个 http 服务可以独立提供 http 服务。可以做网页静态服务器。
+2、虚拟主机。可以实现在一台服务器虚拟出多个网站。例如个人网站使用的虚拟主机。
+3、反向代理，负载均衡。当网站的访问量达到一定程度后，单台服务器不能满足用户的请求时，需要用多台服务器集群可以使用 nginx 做反向代理。并且多台服务器可以平均分担负载，不会因为某台服务器负载高宕机而某台服务器闲置的情况。 
+</code></pre><h2 id="Nginx在Linux下的安装"><a href="#Nginx在Linux下的安装" class="headerlink" title="Nginx在Linux下的安装"></a>Nginx在Linux下的安装</h2><p> 重新准备一台虚拟机作为服务器。比如IP地址为192.168.25.141  </p>
+<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><p> （1）需要安装 gcc 的环境</p>
+<pre><code>yum install gcc-c++
+</code></pre><p> （2）第三方的开发包。<br>    n PCRE<br>    PCRE(Perl Compatible Regular Expressions)是一个 Perl 库，包括 perl 兼容的正则表达式库。nginx 的 http 模块使用pcre 来解析正则表达式，所以需要在 linux 上安装 pcre 库。</p>
+<pre><code>yum install -y pcre pcre-devel
+</code></pre><p>   注：pcre-devel 是使用 pcre 开发的一个二次开发库。nginx 也需要此库。</p>
+<p>   n  zlib<br>   zlib 库提供了很多种压缩和解压缩的方式，nginx 使用 zlib 对 http 包的内容进行 gzip，所以需要在 linux 上安装 zlib 库。</p>
+<pre><code>yum install -y zlib zlib-devel
+</code></pre><p>  n  OpenSSL<br>   OpenSSL 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及 SSL 协议，并提供丰富的应用程序供测试或其它目的使用。nginx 不仅支持 http 协议，还支持 https（即在 ssl 协议上传输 http），所以需要在 linux安装 openssl 库。</p>
+<pre><code>yum install -y openssl openssl-devel
+</code></pre><h3 id="Nginx下载"><a href="#Nginx下载" class="headerlink" title="Nginx下载"></a>Nginx下载</h3><p> 官方网站下载 nginx：<a href="http://nginx.org/" target="_blank" rel="noopener">http://nginx.org/</a><br>  版本： 1.8.0 版本。</p>
+<h3 id="Nginx安装"><a href="#Nginx安装" class="headerlink" title="Nginx安装"></a>Nginx安装</h3><p>  第一步：把 nginx 的源码包nginx-1.8.0.tar.gz上传到 linux 系统<br>  Alt+p  启动sftp  ,将nginx-1.8.0.tar.gz上传<br>  第二步：解压缩</p>
+<pre><code>tar zxvf nginx-1.8.0.tar.gz
+</code></pre><p> 第三步：进入nginx-1.8.0目录   使用 configure 命令创建一 makeFile 文件。</p>
+<pre><code>./configure \
+--prefix=/usr/local/nginx \
+--pid-path=/var/run/nginx/nginx.pid \
+--lock-path=/var/lock/nginx.lock \
+--error-log-path=/var/log/nginx/error.log \
+--http-log-path=/var/log/nginx/access.log \
+--with-http_gzip_static_module \
+--http-client-body-temp-path=/var/temp/nginx/client \
+--http-proxy-temp-path=/var/temp/nginx/proxy \
+--http-fastcgi-temp-path=/var/temp/nginx/fastcgi \
+--http-uwsgi-temp-path=/var/temp/nginx/uwsgi \
+--http-scgi-temp-path=/var/temp/nginx/scgi
+</code></pre><p>  第四步：编译</p>
+<pre><code>make
+</code></pre><p>   第五步：安装</p>
+<pre><code>make install
+</code></pre><h2 id="Nginx启动与访问"><a href="#Nginx启动与访问" class="headerlink" title="Nginx启动与访问"></a>Nginx启动与访问</h2><p>注意：启动nginx 之前，上边将临时文件目录指定为/var/temp/nginx/client， 需要在/var  下创建此 目录</p>
+<pre><code>mkdir /var/temp/nginx/client -p
+</code></pre><p>进入到Nginx目录下的sbin目录</p>
+<pre><code>cd /usr/local/ngiux/sbin
+</code></pre><p>输入命令启动Nginx</p>
+<pre><code>./nginx
+</code></pre><p>启动后查看进程</p>
+<pre><code>ps aux|grep nginx
+</code></pre><p>地址栏输入虚拟机的IP即可访问（默认为80端口）</p>
+<p>关闭 nginx</p>
+<pre><code>./nginx -s stop
+</code></pre><p>或者</p>
+<pre><code>./nginx -s quit
+</code></pre><p>   重启 nginx：<br>    1、先关闭后启动。<br>    2、刷新配置文件：</p>
+<pre><code>./nginx -s reload
+</code></pre><h2 id="Nginx静态网站部署"><a href="#Nginx静态网站部署" class="headerlink" title="Nginx静态网站部署"></a>Nginx静态网站部署</h2><h3 id="1-静态网站的部署"><a href="#1-静态网站的部署" class="headerlink" title="1.静态网站的部署"></a>1.静态网站的部署</h3><pre><code>将我们之前生成的静态页  上传到服务器的/usr/local/nginx/html下即可访问 
+</code></pre><h3 id="2-配置虚拟主机"><a href="#2-配置虚拟主机" class="headerlink" title="2.配置虚拟主机"></a>2.配置虚拟主机</h3><pre><code>虚拟主机，也叫“网站空间”，就是把一台运行在互联网上的物理服务器划分成多个“虚拟”服务器。虚拟主机技术极大的促进了网络技术的应用和普及。同时虚拟主机的租用服务也成了网络时代的一种新型经济形式。
+</code></pre><h3 id="3-端口绑定"><a href="#3-端口绑定" class="headerlink" title="3.端口绑定"></a>3.端口绑定</h3><p> （1）上传静态网站：<br>            将前端静态页cart.html 以及图片样式等资源 上传至  /usr/local/nginx/cart 下<br>            将前端静态页search.html 以及图片样式等资源 上传至  /usr/local/nginx/search 下<br> （2）修改Nginx 的配置文件：/usr/local/nginx/conf/nginx.conf</p>
+<pre><code>server {
+listen       81;
+server_name  localhost;
+location / {
+root   cart;
+index  cart.html;
+}      
+}
+server {
+listen       82;
+server_name  localhost;
+location / {
+root   search;
+index  search.html;
+}        
+}
+</code></pre><p>（3）访问测试：</p>
+<pre><code>地址栏输入http://192.168.25.141:81 可以看到购物车页面
+地址栏输入http://192.168.25.141:82 可以看到搜索页面
+</code></pre><h3 id="4-域名绑定（不详）"><a href="#4-域名绑定（不详）" class="headerlink" title="4.域名绑定（不详）"></a>4.域名绑定（不详）</h3><pre><code>一个域名对应一个 ip 地址，一个 ip 地址可以被多个域名绑定。
+本地测试可以修改 hosts 文件（C:\Windows\System32\drivers\etc）
+可以配置域名和 ip 的映射关系，如果 hosts 文件中配置了域名和 ip 的对应关系，不需要走dns 服务器。
+我们可以通过一个叫SwitchHosts的软件来修改域名指向
+</code></pre><p>做好域名指向后，修改nginx配置文件</p>
+<pre><code>server {
+listen       80;
+server_name  cart.xx.com;
+location / {
+root   cart;
+index  cart.html;
+}
+}
+server {
+listen       80;
+server_name  search.xx.com;
+location / {
+root   search;
+index  search.html;
+}
+}
+</code></pre><p>执行以下命令，刷新配置</p>
+<pre><code>./nginx -s reload
+</code></pre><p>测试：<br>地址栏输入<a href="http://cart.xx.com/" target="_blank" rel="noopener">http://cart.xx.com/</a><br>地址栏输入<a href="http://search.xx.com/" target="_blank" rel="noopener">http://search.xx.com/</a></p>
+<h2 id="Nginx反向代理与负载均衡"><a href="#Nginx反向代理与负载均衡" class="headerlink" title="Nginx反向代理与负载均衡"></a>Nginx反向代理与负载均衡</h2><h3 id="什么是反向代理"><a href="#什么是反向代理" class="headerlink" title="什么是反向代理"></a>什么是反向代理</h3><pre><code>反向代理（Reverse Proxy）方式是指以代理服务器来接受internet上的连接请求，然后将请求转发给内部网络上的服务器，并将从服务器上得到的结果返回给internet上请求连接的客户端，此时代理服务器对外就表现为一个反向代理服务器。
+</code></pre><h3 id="配置反向代理-准备工作"><a href="#配置反向代理-准备工作" class="headerlink" title="配置反向代理-准备工作"></a>配置反向代理-准备工作</h3><pre><code>（1） 将网站首页页面部署到tomcat中（ROOT目录），上传到服务器。
+（2）启动TOMCAT，输入网址http://192.168.25.141:8080可以看到网站首页
+</code></pre><h3 id="配置反向代理"><a href="#配置反向代理" class="headerlink" title="配置反向代理"></a>配置反向代理</h3><p>（1）在Nginx主机修改 Nginx配置文件</p>
+<pre><code>upstream tomcat-portal {
+server 192.168.25.141:8080;
+}
+server {
+listen       80;
+server_name  www.xx.com;   
+location / {
+proxy_pass   http://tomcat-portal;
+index  index.html;
+}
+}
+</code></pre><p>   (2) 重新启动Nginx  然后用浏览器测试： <a href="http://www.xx.com" target="_blank" rel="noopener">www.xx.com</a> （此域名须配置域名指向）</p>
+<h3 id="什么是负载均衡"><a href="#什么是负载均衡" class="headerlink" title="什么是负载均衡"></a>什么是负载均衡</h3><pre><code>负载均衡 建立在现有网络结构之上，它提供了一种廉价有效透明的方法扩展网络设备和服务器的带宽、增加吞吐量、加强网络数据处理能力、提高网络的灵活性和可用性。
+负载均衡，英文名称为Load Balance，其意思就是分摊到多个操作单元上进行执行，例如Web服务器、FTP服务器、企业关键应用服务器和其它关键任务服务器等，从而共同完成工作任务。
+</code></pre><h3 id="配置负载均衡-准备工作"><a href="#配置负载均衡-准备工作" class="headerlink" title="配置负载均衡-准备工作"></a>配置负载均衡-准备工作</h3><pre><code>将刚才放有首页工程的tomcat复制两份，端口分别为8180 和8280 。
+分别启动这两个tomcat服务器的tomcat服务。
+为了能够区分是访问哪个服务器的网站，可以在首页标题加上标记以便区分。
+</code></pre><h3 id="配置负载均衡"><a href="#配置负载均衡" class="headerlink" title="配置负载均衡"></a>配置负载均衡</h3><p>修改 Nginx配置文件</p>
+<pre><code>upstream tomcat-portal {
+server 192.168.25.141:8080;
+server 192.168.25.141:8180;
+server 192.168.25.141:8280;
+}
+server {
+listen       80;
+server_name  www.pinyougou.com;
+
+location / {
+proxy_pass   http://tomcat-portal;
+index  index.html;
+}       
+
+}
+</code></pre><p>如果其中一台服务器性能比较好，想让其承担更多的压力，可以设置权重。</p>
+<pre><code>server 192.168.25.141:8180 weight=2;
+</code></pre>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1866,7 +2161,7 @@ AspectJ是一个基于Java语言的AOP框架，Spring2.0开始，Spring AOP引�
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1895,7 +2190,9 @@ AspectJ是一个基于Java语言的AOP框架，Spring2.0开始，Spring AOP引�
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1940,7 +2237,9 @@ AspectJ是一个基于Java语言的AOP框架，Spring2.0开始，Spring AOP引�
                     
                       
                     
-                    <span class="site-state-item-count">16</span>
+                      
+                    
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
