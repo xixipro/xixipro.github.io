@@ -396,7 +396,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-12-08 11:15:28" itemprop="dateModified" datetime="2019-12-08T11:15:28+08:00">2019-12-08</time>
+                <time title="修改时间：2019-12-08 22:41:55" itemprop="dateModified" datetime="2019-12-08T22:41:55+08:00">2019-12-08</time>
               
             
           </span>
@@ -457,7 +457,13 @@
 </code></pre><h3 id="3-下载安装tomcat分为文件、eclipse插件、maven倒入插件形式-配置环境"><a href="#3-下载安装tomcat分为文件、eclipse插件、maven倒入插件形式-配置环境" class="headerlink" title="3.下载安装tomcat分为文件、eclipse插件、maven倒入插件形式 配置环境"></a>3.下载安装tomcat分为文件、eclipse插件、maven倒入插件形式 配置环境</h3><h3 id="4-下载安装maven-配置环境"><a href="#4-下载安装maven-配置环境" class="headerlink" title="4.下载安装maven 配置环境"></a>4.下载安装maven 配置环境</h3><h2 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h2><p>   Group id 项目的域名<br>   Artifact id 项目名称<br>   Packaging 包的类型 </p>
 <h2 id="web项目的基本设置"><a href="#web项目的基本设置" class="headerlink" title="web项目的基本设置"></a>web项目的基本设置</h2><p>   在properties（设置）<br>   1.resource中设置编译<br>   2.若不是maven项目，将所需的包通过Javabuildpath 导入到项目中。<br>   3.Javacompile 设置项目的Java的版本<br>   4.若建的是maven项目，maven项目默认JDK是1.5，可在mven–project facets中调整Java版本<br>   5.server和targeted runtimes 选择tomcat<br>   6.若是web项目，默认是没有web.xml文件需要右键项目找打javaee tools就会消除报错。</p>
 <h2 id="web-xml"><a href="#web-xml" class="headerlink" title="web.xml"></a>web.xml</h2><p>   web.xml是项目的入口。<br>   通过项目的-项目IP地址+端口+项目名或者是域名访问项目<br>   默认的欢迎页面：自动搜索相应的页面，这样一个简单的网页搭建成功。<br>   welcome-file-list<br>     welcome-file<br>      html/index.html</p>
-<h2 id="项目的框架选择"><a href="#项目的框架选择" class="headerlink" title="项目的框架选择"></a>项目的框架选择</h2><p>   框架的搭配：<br>   1.Spring+strus/strus2+hibernet<br>   2.Spring+Springmvc+hibernet<br>   3.spring+springmvc+mybatis<br>   4.Springboot+mybatis<br>   5.Springcloud<br>   第一种和第二种比较适合传统项目金融，Springboot+Springcloud目前比较流行。根据项目需求搭配相应的框架</p>
+<h3 id="web-xml的相关配置"><a href="#web-xml的相关配置" class="headerlink" title="web.xml的相关配置"></a>web.xml的相关配置</h3><pre><code>只要是在该文件中配置来自动生效，基本配置Spring、Springmvc路径、拦截器、过滤器 等等
+程序的入口:由SpringMVC中的前端控制器，地址访问--DispatcherServlet(前端控制器)--handlerMapping--controller
+</code></pre><h4 id="springmvc的配置"><a href="#springmvc的配置" class="headerlink" title="springmvc的配置"></a>springmvc的配置</h4><pre><code>1.在web.xml中severlet加入初始化参数&lt;init-param&gt; --Springmvc-severlet文件
+2.组件扫描包：
+&lt;context:component-scan base-package=&quot;cn.xixipro&quot;&gt;&lt;/context:component-scan&gt;    (没有配置就找不到组件)
+3.其他配置
+</code></pre><h4 id="Spring的配置"><a href="#Spring的配置" class="headerlink" title="Spring的配置"></a>Spring的配置</h4><h2 id="中文编译乱码问题"><a href="#中文编译乱码问题" class="headerlink" title="中文编译乱码问题"></a>中文编译乱码问题</h2><h2 id="项目的框架选择"><a href="#项目的框架选择" class="headerlink" title="项目的框架选择"></a>项目的框架选择</h2><p>   框架的搭配：<br>   1.Spring+strus/strus2+hibernet<br>   2.Spring+Springmvc+hibernet<br>   3.spring+springmvc+mybatis<br>   4.Springboot+mybatis<br>   5.Springcloud<br>   第一种和第二种比较适合传统项目金融，Springboot+Springcloud目前比较流行。根据项目需求搭配相应的框架</p>
 <h2 id="web项目构成"><a href="#web项目构成" class="headerlink" title="web项目构成"></a>web项目构成</h2><p>   直观角度：访问网页（前端）–点击输入输出数据（后端）+数据库<br>   网络协议：<br>   前端：页面效果 ，基础技术包含 html css js ajax（ajax主要用于前后端之间的交互） 框架bootstrap angularjs等等<br>   后端：数据的增删改查（业务逻辑），基本技术JavaSE（Java的API）五大基本框架 接入各种服务接口</p>
 
           
