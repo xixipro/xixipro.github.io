@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="1.数据类型Java中有基本数据类型( byte、short、chat、int、long、double、float、boolean )和引用类型( String ) 2.数组数组是相同类型的变量按顺序组成的一种复合数据类型，称这些相同类型的变量为数组的元素或单元。 数组通过数组名加索引来使用数组的元素。 2.1数组(array)的创建方式public static void main(String">
+<meta name="keywords" content="数据类型和算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法">
+<meta property="og:url" content="http://yoursite.com/2019/03/03/算法/index.html">
+<meta property="og:site_name" content="Anne Blog">
+<meta property="og:description" content="1.数据类型Java中有基本数据类型( byte、short、chat、int、long、double、float、boolean )和引用类型( String ) 2.数组数组是相同类型的变量按顺序组成的一种复合数据类型，称这些相同类型的变量为数组的元素或单元。 数组通过数组名加索引来使用数组的元素。 2.1数组(array)的创建方式public static void main(String">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-04T09:27:44.005Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法">
+<meta name="twitter:description" content="1.数据类型Java中有基本数据类型( byte、short、chat、int、long、double、float、boolean )和引用类型( String ) 2.数组数组是相同类型的变量按顺序组成的一种复合数据类型，称这些相同类型的变量为数组的元素或单元。 数组通过数组名加索引来使用数组的元素。 2.1数组(array)的创建方式public static void main(String">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/03/算法/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>算法 | Anne Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Anne Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">记录成长</h1>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">20</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">11</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">21</span></a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/03/算法/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="anne">
+      <meta itemprop="description" content="用心感受生活">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anne Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">算法
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-03 21:39:12" itemprop="dateCreated datePublished" datetime="2019-03-03T21:39:12+08:00">2019-03-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-04 17:27:44" itemprop="dateModified" datetime="2019-03-04T17:27:44+08:00">2019-03-04</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <a href="/2019/03/03/算法/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2019/03/03/算法/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-数据类型"><a href="#1-数据类型" class="headerlink" title="1.数据类型"></a>1.数据类型</h1><pre><code>Java中有基本数据类型( byte、short、chat、int、long、double、float、boolean )和引用类型( String )
+</code></pre><h1 id="2-数组"><a href="#2-数组" class="headerlink" title="2.数组"></a>2.数组</h1><pre><code>数组是相同类型的变量按顺序组成的一种复合数据类型，称这些相同类型的变量为数组的元素或单元。
+数组通过数组名加索引来使用数组的元素。
+</code></pre><h2 id="2-1数组-array-的创建方式"><a href="#2-1数组-array-的创建方式" class="headerlink" title="2.1数组(array)的创建方式"></a>2.1数组(array)的创建方式</h2><pre><code>public static void main(String[] args) {
+//创建数组的第一种方法
+int[] arr=new int[6];
+int intValue=arr[5];
+//System.out.println(intValue);
+//创建数组的第二种方法
+int[] x={1,2,3,4};
+//System.out.println(x[1]);
+
+//创建数组的第三种方法。
+int[] y= new int[]{1,2,3,4,5};
+int m=0;
+boolean length = isLength(m,y);
+if(length){
+System.out.println(y[m]);
+}else{
+System.err.println(&quot;数组标越界&quot;);
+}    
+
+}
+//判断数组下标是否越界
+public static boolean isLength(int m,int arr[]){
+boolean flag=false;
+int length = arr.length;
+if(m&lt;length)
+flag=true;
+return flag;
+}
+</code></pre><h1 id="3-集合"><a href="#3-集合" class="headerlink" title="3.集合"></a>3.集合</h1><pre><code>1.当我们需要保持一组一样（类型相同）的元素的时候，我们应该使用一个容器来保存，数组就是这样一个容器。
+2.数组一旦定义，长度将不能再变化。
+3.然而在我们的开发实践中，经常需要保存一些变长的数据集合，于是，我们需要一些能够动态增长长度的容器来保存我们的数据。
+4.而我们需要对数据的保存的逻辑可能各种各样，于是就有了各种各样的数据结构。我们将数据结构在Java中实现，于是就有了我们的集合框架。
+</code></pre><h1 id="4-数据转换"><a href="#4-数据转换" class="headerlink" title="4.数据转换"></a>4.数据转换</h1><h2 id="4-1基本数据转换成String类型-String的静态方法"><a href="#4-1基本数据转换成String类型-String的静态方法" class="headerlink" title="4.1基本数据转换成String类型(String的静态方法)"></a>4.1基本数据转换成String类型(String的静态方法)</h2><pre><code>int a=3433;
+System.out.println(String.valueOf(a)+2);
+</code></pre><p>输出：</p>
+<pre><code>34332
+</code></pre><h2 id="4-2String类型转换成基本数据类型"><a href="#4-2String类型转换成基本数据类型" class="headerlink" title="4.2String类型转换成基本数据类型"></a>4.2String类型转换成基本数据类型</h2><pre><code>String a=&quot;47347&quot;;
+System.out.println(Integer.parseInt(a)+8);
+</code></pre><p>输出：</p>
+<pre><code>47355
+</code></pre><h2 id="4-3数组转换成集合-Arrays"><a href="#4-3数组转换成集合-Arrays" class="headerlink" title="4.3数组转换成集合(Arrays)"></a>4.3数组转换成集合(Arrays)</h2><pre><code>List&lt;String&gt; list=Arrays.asList(str1);//将数组转换成集合
+</code></pre><h2 id="4-4集合转换成数组"><a href="#4-4集合转换成数组" class="headerlink" title="4.4集合转换成数组"></a>4.4集合转换成数组</h2><pre><code>// 当list中的数据类型都一致时可以将list转化为数组
+    List list = new ArrayList();
+    list.add(&quot;a&quot;);
+    list.add(&quot;b&quot;);
+    Object[] array = list.toArray();
+</code></pre><p>练习1：将”I LOVE JAVA” 输出为”JAVA LOVE I”</p>
+<pre><code>public class Test1{
+    public void getStr(){
+    String str=&quot;I LOVE JAVA&quot;;
+    String[] str1=str.slipt(&quot; &quot;);
+    List&lt;String&gt; list=Arrays.asList(str1); //将数组转为list
+    Collections.reverse(list); //使用到Collections工具类的方法
+    StringBuild sb=new StringBuild();
+    for（String str2:list）{
+    sb.append(str2+&quot; &quot;);
+        }
+        system.out.println(sb);
+    }
+
+public static main(String[]args){
+    Test1 te=new Test1();
+    te.getStr();
+    }
+}
+</code></pre><p>   练习2: 将一组数组eg: {2,3,3,3,6,7,7,8} 里面有几组两个相同的数据</p>
+<h1 id="5-JAVA算法"><a href="#5-JAVA算法" class="headerlink" title="5.JAVA算法"></a>5.JAVA算法</h1><h2 id="5-1排序都有哪几种方法？"><a href="#5-1排序都有哪几种方法？" class="headerlink" title="5.1排序都有哪几种方法？"></a>5.1排序都有哪几种方法？</h2><ol>
+<li>插入排序（直接插入排序、希尔排序）</li>
+<li>交换排序（冒泡排序、快速排序）</li>
+<li>选择排序（直接选择排序、堆排序）</li>
+<li>归并排序</li>
+<li><p>分配排序（箱排序、基数排序）</p>
+<h2 id="5-2-查找有哪些方法？"><a href="#5-2-查找有哪些方法？" class="headerlink" title="5.2 查找有哪些方法？"></a>5.2 查找有哪些方法？</h2></li>
+<li><p>顺序查找(适合于存储结构为顺序储存或链接存储的线性表)<br> 查找s[0]-s[i-1]与key一致的数据</p>
+<pre><code>    public void seach( String[] s,String key,int n){
+    int  i=0;
+    while(i&lt;n &amp;&amp; s[i]!=key){
+    i++
+    if(key==s[i]){
+    return i;
+}
+}
+return -1;
+}
+</code></pre></li>
+<li><p>二分查找<br> 前提条件：二分法查找适用于数据量较大时，但是数据需要先排好顺序。</p>
+<pre><code>public static int search(int[] arr, int key){
+ int start=0;
+ int end=arr.length-1;
+ while (start&lt;=end)
+ {
+ int mid = (end+start)/2;
+ if (key&lt;arr[mid])
+ {
+ end=mid-1;
+ }else if (key&gt;arr[mid]){
+ start=mid+1;
+ }else {
+ return mid;
+ }
+ }
+ return -1;
+ }
+</code></pre></li>
+<li><p>分块查找</p>
+</li>
+<li>二叉排序树查找（二叉查找树）</li>
+</ol>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据类型和算法/" rel="tag"># 数据类型和算法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/28/锁机制/" rel="next" title="锁机制">
+                <i class="fa fa-chevron-left"></i> 锁机制
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/08/springboot/" rel="prev" title="springboot">
+                springboot <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="anne">
+            
+              <p class="site-author-name" itemprop="name">anne</p>
+              <p class="site-description motion-element" itemprop="description">用心感受生活</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/xixipro" title="GitHub &rarr; https://github.com/xixipro" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:161366773@qq.com" title="E-Mail &rarr; mailto:161366773@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-数据类型"><span class="nav-number">1.</span> <span class="nav-text">1.数据类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-数组"><span class="nav-number">2.</span> <span class="nav-text">2.数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1数组-array-的创建方式"><span class="nav-number">2.1.</span> <span class="nav-text">2.1数组(array)的创建方式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-集合"><span class="nav-number">3.</span> <span class="nav-text">3.集合</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-数据转换"><span class="nav-number">4.</span> <span class="nav-text">4.数据转换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1基本数据转换成String类型-String的静态方法"><span class="nav-number">4.1.</span> <span class="nav-text">4.1基本数据转换成String类型(String的静态方法)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2String类型转换成基本数据类型"><span class="nav-number">4.2.</span> <span class="nav-text">4.2String类型转换成基本数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3数组转换成集合-Arrays"><span class="nav-number">4.3.</span> <span class="nav-text">4.3数组转换成集合(Arrays)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4集合转换成数组"><span class="nav-number">4.4.</span> <span class="nav-text">4.4集合转换成数组</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-JAVA算法"><span class="nav-number">5.</span> <span class="nav-text">5.JAVA算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1排序都有哪几种方法？"><span class="nav-number">5.1.</span> <span class="nav-text">5.1排序都有哪几种方法？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-查找有哪些方法？"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 查找有哪些方法？</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+  <!-- 音乐播放器 -->
+   <div>
+  
+   <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100" height="86" src="//music.163.com/outchain/player?type=2&id=468517654&auto=1&height=66">    </iframe>
+  
+   </div>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">anne</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=6.7.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  
+    <!-- LOCAL: You can save these files to your site and update links -->
+
+  
+  <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitmint.browser.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.css">
+<!-- END LOCAL -->
+
+<style>
+#gitment-container a {
+  border-bottom: none;
+}
+
+</style>
+
+<script>
+  function renderGitment() {
+    var gitment = new Gitmint({
+      id: window.location.pathname,
+      owner: 'xixipro',
+      repo: 'https://github.com/xixipro/Gitment.git',
+      
+        lang: '' || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+      
+      oauth: {
+      
+      
+        client_secret: '4fb179a7a8af609da61ebae1f9e029851a1305ff',
+      
+        client_id: 'b1a9a5a20219dd89592e'
+      }
+    });
+    gitment.render('gitment-container');
+  }
+
+  
+    renderGitment();
+  
+</script>
+
+  
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+      }
+      else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
