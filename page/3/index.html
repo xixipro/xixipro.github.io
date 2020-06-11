@@ -244,7 +244,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">22</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">23</span></a>
 
   </li>
         
@@ -282,7 +282,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">23</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">24</span></a>
 
   </li>
 
@@ -318,6 +318,349 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/27/mybatis/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="anne">
+      <meta itemprop="description" content="用心感受生活">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anne Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/01/27/mybatis/" class="post-title-link" itemprop="url">mybatis</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-27 21:20:33" itemprop="dateCreated datePublished" datetime="2019-01-27T21:20:33+08:00">2019-01-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-01-08 20:47:30" itemprop="dateModified" datetime="2020-01-08T20:47:30+08:00">2020-01-08</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/持久层框架/" itemprop="url" rel="index"><span itemprop="name">持久层框架</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="mybatis介绍"><a href="#mybatis介绍" class="headerlink" title="mybatis介绍:"></a>mybatis介绍:</h1><pre><code>前生是ibatis，它封装了JDBC的持久层框架，提供了对数据库操作的接口：SqlSessionFactoryBuilder SqlSessionFactory SqlSession  
+它是半ORM框架（类和表的映射）
+</code></pre><h2 id="mybatis和Spring整合"><a href="#mybatis和Spring整合" class="headerlink" title="mybatis和Spring整合"></a>mybatis和Spring整合</h2><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><h4 id="1-导jar包："><a href="#1-导jar包：" class="headerlink" title="1.导jar包："></a>1.导jar包：</h4><pre><code>spring-jdbc:4.2.4.RELEASE 
+mysql-connector-java:5.1.32
+mybatis:3.2.8
+mybatis-spring:1.2.2
+</code></pre><h4 id="2-配置文件"><a href="#2-配置文件" class="headerlink" title="2.配置文件"></a>2.配置文件</h4><p><1> 在applicationContext-*.xml 文件中</1></p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+xmlns:context=&quot;http://www.springframework.org/schema/context&quot; xmlns:p=&quot;http://www.springframework.org/schema/p&quot;
+xmlns:aop=&quot;http://www.springframework.org/schema/aop&quot; xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;
+xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd 
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd&quot;&gt;
+
+   &lt;!-- 数据库连接池 --&gt;
+   &lt;!-- 加载配置文件 --&gt;
+     &lt;context:property-placeholder location=&quot;classpath*:properties/*.properties&quot; /&gt;
+   &lt;!-- 数据库连接池 jdbc dbcp 等类型--&gt;
+     &lt;bean id=&quot;dataSource&quot; class=&quot;org.springframework.jdbc.datasource.DriverManagerDataSource&quot;&gt;
+       &lt;property name=&quot;url&quot; value=&quot;${jdbc.url}&quot; /&gt;
+       &lt;property name=&quot;username&quot; value=&quot;${jdbc.username}&quot; /&gt;
+       &lt;property name=&quot;password&quot; value=&quot;${jdbc.password}&quot; /&gt;
+       &lt;property name=&quot;driverClassName&quot; value=&quot;${jdbc.driver}&quot; /&gt;
+      &lt;/bean&gt;
+    &lt;!-- 让spring管理sqlsessionfactory 使用mybatis和spring整合包中的 --&gt;
+     &lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
+    &lt;!-- 数据库连接池 --&gt;
+      &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot; /&gt;
+     &lt;!-- 加载mybatis的全局配置文件 可省略 --&gt;
+     &lt;/bean&gt;
+     &lt;!-- mapper扫描，扫描所有的mapper接口 --&gt;
+     &lt;bean class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
+      &lt;property name=&quot;basePackage&quot; value=&quot;com&quot; /&gt;
+     &lt;/bean&gt;
+&lt;/bean&gt;
+</code></pre><p><2> 在 properties/*.properties</2></p>
+<pre><code>jdbc.driver=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost:3306/database
+jdbc.username=root
+jdbc.password=123456
+</code></pre><h4 id="3-建立映射接口和代理mapper"><a href="#3-建立映射接口和代理mapper" class="headerlink" title="3.建立映射接口和代理mapper"></a>3.建立映射接口和代理mapper</h4><p>  (1)接口：</p>
+<pre><code>public interface UserMapper {
+ //查询所有，返回map类型
+List&lt;Map&lt;String, Object&gt;&gt; findAll();
+}
+</code></pre><p>   (2)*mapper.xml:</p>
+<pre><code> &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE mapper    
+PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;    
+&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;com.mapper.UserMapper&quot;&gt;
+ &lt;select id=&quot;findAll&quot; resultType=&quot;Map&quot;&gt;
+   select * from user
+ &lt;/select&gt;
+&lt;/mapper&gt;
+</code></pre><h4 id="4-测试"><a href="#4-测试" class="headerlink" title="4.测试"></a>4.测试</h4><pre><code>public class myBatisTest {
+ ApplicationContext ctx;
+  @Before
+ public void setUp() throws Exception {
+    //手动启动Spring容器
+  ctx = new ClassPathXmlApplicationContext(
+       &quot;spring/applicationContext-mybatis.xml&quot;);
+ }
+
+   @Test
+  public void test1(){
+  /**
+   * mybatis和hibernate都是持久层的框架（对jdbc的封装），都是ORM。
+   * mybatis是半ORM，专注SQL的编写,对数据库的操作更灵活
+   * hibernate是全ORM，不需要写SQL
+   */
+    UserMapper mapper=(UserMapper) ctx.getBean(&quot;userMapper&quot;);
+    List&lt;Map&lt;String, Object&gt;&gt; user=mapper.findAll();
+      for(Map&lt;String, Object&gt; u:user) {
+         System.out.println(u);
+      }
+    }
+ }
+</code></pre><h4 id="注意：1-mybatis映射是有规范的，接口的包名必须和代理mapper文件名一一对应-，反之会找不到该映射文件"><a href="#注意：1-mybatis映射是有规范的，接口的包名必须和代理mapper文件名一一对应-，反之会找不到该映射文件" class="headerlink" title="注意：1.mybatis映射是有规范的，接口的包名必须和代理mapper文件名一一对应 ，反之会找不到该映射文件"></a>注意：1.mybatis映射是有规范的，接口的包名必须和代理mapper文件名一一对应 ，反之会找不到该映射文件</h4><pre><code>或者 在 SqlSessionFactory中增加属性指定映射文件的位置：&lt;property name=&quot;mapperLocations&quot;  value=&quot;classpath:mapper/*.xml&quot;/&gt;
+    2.mapper映射文件中的Sql 的 #和$的区别#的值是“”为防止加SQL，$则反之。
+</code></pre><h1 id="mybatis的逆向工程（提高效率，自动生成mapper、接口、实体）"><a href="#mybatis的逆向工程（提高效率，自动生成mapper、接口、实体）" class="headerlink" title="mybatis的逆向工程（提高效率，自动生成mapper、接口、实体）"></a>mybatis的逆向工程（提高效率，自动生成mapper、接口、实体）</h1><pre><code>1.为不影响现有工程，新建一个工程。
+
+2.manven或者倒入3个相关的jar包：
+   mybatis:3.2.8
+   Mybatis-generator-core:1.3.5
+   Mysql-connector-java:5.1.43
+
+3.创建配置文件 （generatorConfig.xml）
+    &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+   &lt;!DOCTYPE generatorConfiguration
+     PUBLIC &quot;-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN&quot;
+    &quot;http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;
+
+ &lt;generatorConfiguration&gt;
+  &lt;context id=&quot;testTables&quot; targetRuntime=&quot;MyBatis3&quot;&gt;
+    &lt;commentGenerator&gt;
+        &lt;!-- 是否去除自动生成的注释 true：是 ： false:否 --&gt;
+        &lt;property name=&quot;suppressAllComments&quot; value=&quot;true&quot; /&gt;
+    &lt;/commentGenerator&gt;
+    &lt;!--数据库连接的信息：驱动类、连接地址、用户名、密码 --&gt;
+    &lt;jdbcConnection driverClass=&quot;com.mysql.jdbc.Driver&quot;
+        connectionURL=&quot;jdbc:mysql://localhost:3306/mynote? 
+        characterEncoding=utf-8&amp;amp;useSSL=true&quot; userId=&quot;root&quot;      
+        password=&quot;123456&quot; &gt;
+    &lt;/jdbcConnection&gt;
+    &lt;!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和 
+        NUMERIC 类型解析为java.math.BigDecimal --&gt;
+    &lt;javaTypeResolver&gt;
+        &lt;property name=&quot;forceBigDecimals&quot; value=&quot;false&quot; /&gt;
+    &lt;/javaTypeResolver&gt;
+
+    &lt;!-- targetProject:生成PO类的位置 --&gt;
+    &lt;javaModelGenerator targetPackage=&quot;cn.xixipro.pojo&quot;
+        targetProject=&quot;./src/main/java&quot;&gt;
+        &lt;!-- enableSubPackages:是否让schema作为包的后缀 --&gt;
+        &lt;property name=&quot;enableSubPackages&quot; value=&quot;false&quot; /&gt;
+        &lt;!-- 从数据库返回的值被清理前后的空格 --&gt;
+        &lt;property name=&quot;trimStrings&quot; value=&quot;true&quot; /&gt;
+    &lt;/javaModelGenerator&gt;
+    &lt;!-- targetProject:mapper映射文件生成的位置 --&gt;
+    &lt;sqlMapGenerator targetPackage=&quot;cn.xixipro.mapper&quot; 
+        targetProject=&quot;./src/main/java&quot;&gt;
+        &lt;!-- enableSubPackages:是否让schema作为包的后缀 --&gt;
+        &lt;property name=&quot;enableSubPackages&quot; value=&quot;false&quot; /&gt;
+    &lt;/sqlMapGenerator&gt;
+    &lt;!-- targetPackage：mapper接口生成的位置 --&gt;
+    &lt;javaClientGenerator type=&quot;XMLMAPPER&quot;
+        targetPackage=&quot;cn.xixipro.mapper&quot; 
+        targetProject=&quot;../src/main/java&quot;&gt;
+        &lt;!-- enableSubPackages:是否让schema作为包的后缀 --&gt;
+        &lt;property name=&quot;enableSubPackages&quot; value=&quot;false&quot; /&gt;
+    &lt;/javaClientGenerator&gt;
+    &lt;!-- 指定数据库表 --&gt;
+    &lt;table schema=&quot;&quot; tableName=&quot;user&quot;&gt;&lt;/table&gt;
+    &lt;!-- &lt;table schema=&quot;&quot; tableName=&quot;tb_area&quot;&gt;&lt;/table&gt; --&gt;
+
+   &lt;/context&gt;
+ &lt;/generatorConfiguration&gt;
+
+ 4.编写一个含有main方法的Java类，运行就会生成文件
+    public class GeneratorSqlmap {
+
+public void generator() throws Exception{
+
+    List&lt;String&gt; warnings = new ArrayList&lt;String&gt;();
+    boolean overwrite = true;
+    //指定 逆向工程配置文件
+    File configFile = new File(&quot;src/main/resources/generatorConfig.xml&quot;); 
+    ConfigurationParser cp = new ConfigurationParser(warnings);
+    Configuration config = cp.parseConfiguration(configFile);
+    DefaultShellCallback callback = new DefaultShellCallback(overwrite);
+    MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config,
+            callback, warnings);
+    myBatisGenerator.generate(null);
+
+} 
+public static void main(String[] args) throws Exception {
+    try {
+        GeneratorSqlmap generatorSqlmap = new GeneratorSqlmap();
+        generatorSqlmap.generator();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+
+  }
+}
+</code></pre><h2 id="ps-在设置配置文件时，地址路径-Mac使用-windows使用-不然控制台没有报错但是生成文件找不到。"><a href="#ps-在设置配置文件时，地址路径-Mac使用-windows使用-不然控制台没有报错但是生成文件找不到。" class="headerlink" title="ps:在设置配置文件时，地址路径 Mac使用./  windows使用.\ 不然控制台没有报错但是生成文件找不到。"></a>ps:在设置配置文件时，地址路径 Mac使用./  windows使用.\ 不然控制台没有报错但是生成文件找不到。</h2><pre><code>[逆向生成的Example类的使用](https://blog.csdn.net/Nerver_77/article/details/79707190)
+</code></pre>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -877,7 +1220,7 @@ AspectJ是一个基于Java语言的AOP框架，Spring2.0开始，Spring AOP引�
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -973,7 +1316,9 @@ AspectJ是一个基于Java语言的AOP框架，Spring2.0开始，Spring AOP引�
                     
                       
                     
-                    <span class="site-state-item-count">22</span>
+                      
+                    
+                    <span class="site-state-item-count">23</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
