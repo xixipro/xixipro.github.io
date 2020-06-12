@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="试题一三张表，有主外键 分别为学生、班级、年级表。 求每个年级的每个班级的总人数？  思路：不要被年级给混淆了，求班级的。      1.将班级分组      2.三表通过左外连接，设置条件      3.查询班级，和人数总和      注： GROUP BY和统计聚合函数同用时，除分组字段其他字段      不可查询。 select 班级 ,count(学号)  from user a left">
+  <meta name="description" content="试题一三张表，有主外键 分别为学生、班级、年级表。 求每个年级每个班级的总人数？  思路：求每个年级班级的人数。      1.将年级、班级分组      2.三表通过左外连接，设置条件      3.查询年级、班级，和人数总和      注： GROUP BY和统计聚合函数同用时，除分组字段其他字段      不可查询。 select 年级、班级 ,count(学号)  from user a">
 <meta name="keywords" content="SQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="试题—数据库">
 <meta property="og:url" content="http://yoursite.com/2020/06/11/试题—数据库/index.html">
 <meta property="og:site_name" content="Anne Blog">
-<meta property="og:description" content="试题一三张表，有主外键 分别为学生、班级、年级表。 求每个年级的每个班级的总人数？  思路：不要被年级给混淆了，求班级的。      1.将班级分组      2.三表通过左外连接，设置条件      3.查询班级，和人数总和      注： GROUP BY和统计聚合函数同用时，除分组字段其他字段      不可查询。 select 班级 ,count(学号)  from user a left">
+<meta property="og:description" content="试题一三张表，有主外键 分别为学生、班级、年级表。 求每个年级每个班级的总人数？  思路：求每个年级班级的人数。      1.将年级、班级分组      2.三表通过左外连接，设置条件      3.查询年级、班级，和人数总和      注： GROUP BY和统计聚合函数同用时，除分组字段其他字段      不可查询。 select 年级、班级 ,count(学号)  from user a">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-06-11T16:04:02.122Z">
+<meta property="og:updated_time" content="2020-06-12T02:21:36.041Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="试题—数据库">
-<meta name="twitter:description" content="试题一三张表，有主外键 分别为学生、班级、年级表。 求每个年级的每个班级的总人数？  思路：不要被年级给混淆了，求班级的。      1.将班级分组      2.三表通过左外连接，设置条件      3.查询班级，和人数总和      注： GROUP BY和统计聚合函数同用时，除分组字段其他字段      不可查询。 select 班级 ,count(学号)  from user a left">
+<meta name="twitter:description" content="试题一三张表，有主外键 分别为学生、班级、年级表。 求每个年级每个班级的总人数？  思路：求每个年级班级的人数。      1.将年级、班级分组      2.三表通过左外连接，设置条件      3.查询年级、班级，和人数总和      注： GROUP BY和统计聚合函数同用时，除分组字段其他字段      不可查询。 select 年级、班级 ,count(学号)  from user a">
 
 
 
@@ -395,7 +395,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-06-12 00:04:02" itemprop="dateModified" datetime="2020-06-12T00:04:02+08:00">2020-06-12</time>
+                <time title="修改时间：2020-06-12 10:21:36" itemprop="dateModified" datetime="2020-06-12T10:21:36+08:00">2020-06-12</time>
               
             
           </span>
@@ -460,18 +460,18 @@
 
       
         <h3 id="试题一"><a href="#试题一" class="headerlink" title="试题一"></a>试题一</h3><pre><code>三张表，有主外键 分别为学生、班级、年级表。
-求每个年级的每个班级的总人数？
+求每个年级每个班级的总人数？
 
-思路：不要被年级给混淆了，求班级的。
-     1.将班级分组
+思路：求每个年级班级的人数。
+     1.将年级、班级分组
      2.三表通过左外连接，设置条件
-     3.查询班级，和人数总和
+     3.查询年级、班级，和人数总和
      注： GROUP BY和统计聚合函数同用时，除分组字段其他字段
      不可查询。
-select 班级 ,count(学号) 
+select 年级、班级 ,count(学号) 
 from user a left join grade  b on a.`年级id`=b.`年级id`
 left join class c on b.`班级id`=c.`班级id`
-GROUP BY 班级
+GROUP BY 年级、班级
 </code></pre>
       
     </div>
