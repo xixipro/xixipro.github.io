@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="Springboot摘自springcloud建项目 springbootspringboot用来简化Spring的配置的。 怎么使用Springboot？1.在pom.xml中导入springboot启动包（spring-boot-starter-web）并加载依赖包 &amp;lt;project xmlns=&amp;quot;http://maven.apache.org/POM/4.0.0&amp;quot;">
+  <meta name="description" content="Springboot摘自springcloud建项目 springbootspringboot用来简化Spring的配置的。 核心功能1.起步依赖 2.自动装配 怎么使用Springboot？1.在pom.xml中导入springboot启动包（spring-boot-starter-web）并加载依赖包 &amp;lt;project xmlns=&amp;quot;http://maven.apache.or">
 <meta name="keywords" content="springBoot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="springboot">
 <meta property="og:url" content="http://yoursite.com/2019/03/08/springboot/index.html">
 <meta property="og:site_name" content="Anne Blog">
-<meta property="og:description" content="Springboot摘自springcloud建项目 springbootspringboot用来简化Spring的配置的。 怎么使用Springboot？1.在pom.xml中导入springboot启动包（spring-boot-starter-web）并加载依赖包 &amp;lt;project xmlns=&amp;quot;http://maven.apache.org/POM/4.0.0&amp;quot;">
+<meta property="og:description" content="Springboot摘自springcloud建项目 springbootspringboot用来简化Spring的配置的。 核心功能1.起步依赖 2.自动装配 怎么使用Springboot？1.在pom.xml中导入springboot启动包（spring-boot-starter-web）并加载依赖包 &amp;lt;project xmlns=&amp;quot;http://maven.apache.or">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-09T15:30:20.501Z">
+<meta property="og:updated_time" content="2020-06-19T14:27:52.091Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="springboot">
-<meta name="twitter:description" content="Springboot摘自springcloud建项目 springbootspringboot用来简化Spring的配置的。 怎么使用Springboot？1.在pom.xml中导入springboot启动包（spring-boot-starter-web）并加载依赖包 &amp;lt;project xmlns=&amp;quot;http://maven.apache.org/POM/4.0.0&amp;quot;">
+<meta name="twitter:description" content="Springboot摘自springcloud建项目 springbootspringboot用来简化Spring的配置的。 核心功能1.起步依赖 2.自动装配 怎么使用Springboot？1.在pom.xml中导入springboot启动包（spring-boot-starter-web）并加载依赖包 &amp;lt;project xmlns=&amp;quot;http://maven.apache.or">
 
 
 
@@ -395,7 +395,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-09 23:30:20" itemprop="dateModified" datetime="2019-03-09T23:30:20+08:00">2019-03-09</time>
+                <time title="修改时间：2020-06-19 22:27:52" itemprop="dateModified" datetime="2020-06-19T22:27:52+08:00">2020-06-19</time>
               
             
           </span>
@@ -461,6 +461,8 @@
       
         <p><a href="https://blog.csdn.net/m0_37106742/article/details/64438892" target="_blank" rel="noopener">Springboot摘自</a><br><a href="https://blog.csdn.net/valada/article/details/80892573" target="_blank" rel="noopener">springcloud</a><br><a href="https://blog.csdn.net/qq_35487047/article/details/82291400" target="_blank" rel="noopener">建项目</a></p>
 <h1 id="springboot"><a href="#springboot" class="headerlink" title="springboot"></a>springboot</h1><pre><code>springboot用来简化Spring的配置的。
+</code></pre><h2 id="核心功能"><a href="#核心功能" class="headerlink" title="核心功能"></a>核心功能</h2><pre><code>1.起步依赖
+2.自动装配
 </code></pre><h2 id="怎么使用Springboot？"><a href="#怎么使用Springboot？" class="headerlink" title="怎么使用Springboot？"></a>怎么使用Springboot？</h2><p>1.在pom.xml中导入springboot启动包（spring-boot-starter-web）并加载依赖包</p>
 <pre><code>&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
 &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
@@ -542,7 +544,19 @@ size:250,        level:&apos;H&apos;,       value:&apos;http://www.baidu.com&apo
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre><p>3.4 运行启动类的主方法便启动项目默认端口为8080，输入localhost：8080/test/info 显示一个二维码</p>
-
+<h2 id="使用IDEA搭建springboot环境"><a href="#使用IDEA搭建springboot环境" class="headerlink" title="使用IDEA搭建springboot环境"></a>使用IDEA搭建springboot环境</h2><pre><code>1.准备好IDEA并配置JDK 、maven  
+强调下maven配置完成之后 需要点开IDEA的右边maven刷新一下才  
+会有Dependencies文件，表示已经配置好了。
+2.新建一个普通的maven工程
+3.在pom.xml中添加起步依赖（以上）
+4.编写引导类及controller
+5.测试
+6.添加热部署，  
+ 6.1由于IDEA需要设置--compiler-勾选Automatically show first error in editor
+ 6.2 control+shift+alter+/ 找到 Auto... run 勾选
+ps:还有种方式是在IDEA中直接创建springboot项目，比自己搭建  
+快速的多，起步依赖和引导类全部自动生成，只管写代码就行了。
+</code></pre>
       
     </div>
 
@@ -831,7 +845,7 @@ size:250,        level:&apos;H&apos;,       value:&apos;http://www.baidu.com&apo
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#springboot"><span class="nav-number">1.</span> <span class="nav-text">springboot</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#怎么使用Springboot？"><span class="nav-number">1.1.</span> <span class="nav-text">怎么使用Springboot？</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#springboot"><span class="nav-number">1.</span> <span class="nav-text">springboot</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#核心功能"><span class="nav-number">1.1.</span> <span class="nav-text">核心功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎么使用Springboot？"><span class="nav-number">1.2.</span> <span class="nav-text">怎么使用Springboot？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用IDEA搭建springboot环境"><span class="nav-number">1.3.</span> <span class="nav-text">使用IDEA搭建springboot环境</span></a></li></ol></li></ol></div>
             
 
           </div>
