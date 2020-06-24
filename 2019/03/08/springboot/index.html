@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="Anne Blog">
 <meta property="og:description" content="Springboot摘自springcloud建项目 springbootspringboot用来简化Spring的配置,整合其他的框架。减少配置的时间，使程序员集中于代码开发。 核心功能1.起步依赖 2.自动装配 springboot的原理1.基于parent包，spring-boot-starter-parent 2.起步依赖包，spring-boot-starter-web 3.@sprin">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-06-21T15:47:15.182Z">
+<meta property="og:updated_time" content="2020-06-24T14:50:29.906Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="springboot">
 <meta name="twitter:description" content="Springboot摘自springcloud建项目 springbootspringboot用来简化Spring的配置,整合其他的框架。减少配置的时间，使程序员集中于代码开发。 核心功能1.起步依赖 2.自动装配 springboot的原理1.基于parent包，spring-boot-starter-parent 2.起步依赖包，spring-boot-starter-web 3.@sprin">
@@ -395,7 +395,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-06-21 23:47:15" itemprop="dateModified" datetime="2020-06-21T23:47:15+08:00">2020-06-21</time>
+                <time title="修改时间：2020-06-24 22:50:29" itemprop="dateModified" datetime="2020-06-24T22:50:29+08:00">2020-06-24</time>
               
             
           </span>
@@ -584,6 +584,21 @@ spring.datasource.password=******
 <pre><code>#扫描包
 mybatis.type-aliases-package=com.xixi.entity
 </code></pre><p>  6.测试<br>    6.1 例如写一个controller ，调用mapper接口的方法<br>    6.2 运行启动程序springbootapplication<br>    6.3 输入Ip端口和controller路径，页面上就展示了查询的数据</p>
+<h2 id="Spring整合redis"><a href="#Spring整合redis" class="headerlink" title="Spring整合redis"></a>Spring整合redis</h2><p>   一、官网下载Linux版或者windows版的redis<br>        例如：Linux下安装redis<br>          1.解压到cd /usr/local下<br>          2.进入到src make 编译下<br>          3.可以配置下redis.conf文件参数  </p>
+<pre><code>    4. 在src中的较重要文件可以单独提出来，方便操作  
+    5. 在该目录下启动 ./redis-server  
+    6. 停止运行 redis-cli shutdown   
+ps: win中直接双击redis-server.exe 就行了
+</code></pre><p>  二、在springBoot项目中<br>  1.在pom.xml中加入redis的起步依赖</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+   &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre><p>  2.properties 中加入redis的ip和端口</p>
+<pre><code>  #配置redis信息
+spring.redis.host=192.168.25.128
+spring.redis.port=6379
+</code></pre><p> 3.可以写一个测试类，进行测试</p>
 
       
     </div>
@@ -873,7 +888,7 @@ mybatis.type-aliases-package=com.xixi.entity
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#springboot"><span class="nav-number">1.</span> <span class="nav-text">springboot</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#核心功能"><span class="nav-number">1.1.</span> <span class="nav-text">核心功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#springboot的原理"><span class="nav-number">1.2.</span> <span class="nav-text">springboot的原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速使用Springboot"><span class="nav-number">1.3.</span> <span class="nav-text">快速使用Springboot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用IDEA搭建springboot环境"><span class="nav-number">1.4.</span> <span class="nav-text">使用IDEA搭建springboot环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#springboot与mybatis整合"><span class="nav-number">1.5.</span> <span class="nav-text">springboot与mybatis整合</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#springboot"><span class="nav-number">1.</span> <span class="nav-text">springboot</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#核心功能"><span class="nav-number">1.1.</span> <span class="nav-text">核心功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#springboot的原理"><span class="nav-number">1.2.</span> <span class="nav-text">springboot的原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速使用Springboot"><span class="nav-number">1.3.</span> <span class="nav-text">快速使用Springboot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用IDEA搭建springboot环境"><span class="nav-number">1.4.</span> <span class="nav-text">使用IDEA搭建springboot环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#springboot与mybatis整合"><span class="nav-number">1.5.</span> <span class="nav-text">springboot与mybatis整合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring整合redis"><span class="nav-number">1.6.</span> <span class="nav-text">Spring整合redis</span></a></li></ol></li></ol></div>
             
 
           </div>

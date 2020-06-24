@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="Anne Blog">
 <meta property="og:description" content="项目常见问题思考我们目前的系统已经实现了广告后台管理和广告前台展示，但是对于首页每天有大量的人访问，对数据库造成很大的访问压力，甚至是瘫痪。那如何解决呢？我们通常的做法有两种：一种是数据缓存、一种是网页静态化。 Redisredis是一款开源的Key-Value数据库，运行在内存中，由ANSI C编写。企业开发通常采用Redis来实现缓存。它支持存储的value类型相对更多，包括string(字符">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-02T04:59:24.782Z">
+<meta property="og:updated_time" content="2020-06-22T03:28:19.863Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="redis">
 <meta name="twitter:description" content="项目常见问题思考我们目前的系统已经实现了广告后台管理和广告前台展示，但是对于首页每天有大量的人访问，对数据库造成很大的访问压力，甚至是瘫痪。那如何解决呢？我们通常的做法有两种：一种是数据缓存、一种是网页静态化。 Redisredis是一款开源的Key-Value数据库，运行在内存中，由ANSI C编写。企业开发通常采用Redis来实现缓存。它支持存储的value类型相对更多，包括string(字符">
@@ -395,7 +395,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-02 12:59:24" itemprop="dateModified" datetime="2019-02-02T12:59:24+08:00">2019-02-02</time>
+                <time title="修改时间：2020-06-22 11:28:19" itemprop="dateModified" datetime="2020-06-22T11:28:19+08:00">2020-06-22</time>
               
             
           </span>
@@ -460,12 +460,10 @@
 
       
         <p>项目常见问题思考<br>我们目前的系统已经实现了广告后台管理和广告前台展示，但是对于首页每天有大量的人访问，对数据库造成很大的访问压力，甚至是瘫痪。那如何解决呢？我们通常的做法有两种：一种是数据缓存、一种是网页静态化。</p>
-<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><pre><code>redis是一款开源的Key-Value数据库，运行在内存中，由ANSI C编写。企业开发通常采用Redis来实现缓存。它支持存储的value类型相对更多，包括string(字符串)、list(链表)、set(集合)、zset(sorted set --有序集合)和hash（哈希类型）,同类的产还有memcache 、memcached 、MongoDB等。
-</code></pre><h1 id="Jedis"><a href="#Jedis" class="headerlink" title="Jedis"></a>Jedis</h1><pre><code>Jedis是Redis官方推出的一款面向Java的客户端，提供了很多接口供Java语言调用。可以在Redis官网下载，当然还有一些开源爱好者提供的客户端，如Jredis、SRP等等，推荐使用Jedis。
-</code></pre><h1 id="Spring-Data-Redis"><a href="#Spring-Data-Redis" class="headerlink" title="Spring Data Redis"></a>Spring Data Redis</h1><pre><code>Spring-data-redis是spring大家族的一部分，提供了在srping应用中通过简单的配置访问redis服务，对reids底层开发包(Jedis,  JRedis, and RJC)进行了高度封装
-RedisTemplate提供了redis各种操作、异常处理及序列化，支持发布订阅，并对spring 3.1 cache进行了实现。
-spring-data-redis针对jedis提供了如下功能： 1.连接池自动管理，提供了一个高度封装的“RedisTemplate”类 2.针对jedis客户端中大量api进行了归类封装,将同一类型操作封装为operation接口 ValueOperations：简单K-V操作 SetOperations：set类型数据操作 ZSetOperations：zset类型数据操作 HashOperations：针对map类型的数据操作 ListOperations：针对list类型的数据操作
-</code></pre>
+<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><p>redis是一款开源的Key-Value数据库，运行在内存中，由ANSI C编写。企业开发通常采用Redis来实现缓存。它支持存储的value类型相对更多，包括string(字符串)、list(链表)、set(集合)、zset(sorted set –有序集合)和hash（哈希类型）,同类的产还有memcache 、memcached 、MongoDB等。</p>
+<h1 id="Jedis"><a href="#Jedis" class="headerlink" title="Jedis"></a>Jedis</h1><p>Jedis是Redis官方推出的一款面向Java的客户端，提供了很多接口供Java语言调用。可以在Redis官网下载，当然还有一些开源爱好者提供的客户端，如Jredis、SRP等等，推荐使用Jedis。</p>
+<h1 id="Spring-Data-Redis"><a href="#Spring-Data-Redis" class="headerlink" title="Spring Data Redis"></a>Spring Data Redis</h1><p>   Spring-data-redis是spring大家族的一部分，提供了在srping应  用中通过简单的配置访问redis服务，对reids底层开发包(Jedis,  JRedis, and RJC)进行了高度封装<br>    RedisTemplate提供了redis各种操作、异常处理及序列化，支持发布订阅，并对spring 3.1 cache进行了实现。<br>    spring-data-redis针对jedis提供了如下功能：     1.连接池自动管理，提供了一个高度封装的“RedisTemplate”类     2.针对jedis客户端中大量api进行了归类封装,将同一类型操作封装为operation接口         ValueOperations：简单K-V操作             SetOperations：set类型数据操作     ZSetOperations：zset类型数据操作     HashOperations：针对map类型的数据操作     ListOperations：针对list类型的数据操作</p>
+<h2 id="储存的数据类型"><a href="#储存的数据类型" class="headerlink" title="储存的数据类型"></a>储存的数据类型</h2><h2 id="常用的命令"><a href="#常用的命令" class="headerlink" title="常用的命令"></a>常用的命令</h2>
       
     </div>
 
@@ -754,7 +752,7 @@ spring-data-redis针对jedis提供了如下功能： 1.连接池自动管理�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis"><span class="nav-number">1.</span> <span class="nav-text">Redis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Jedis"><span class="nav-number">2.</span> <span class="nav-text">Jedis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-Data-Redis"><span class="nav-number">3.</span> <span class="nav-text">Spring Data Redis</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis"><span class="nav-number">1.</span> <span class="nav-text">Redis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Jedis"><span class="nav-number">2.</span> <span class="nav-text">Jedis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-Data-Redis"><span class="nav-number">3.</span> <span class="nav-text">Spring Data Redis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#储存的数据类型"><span class="nav-number">3.1.</span> <span class="nav-text">储存的数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的命令"><span class="nav-number">3.2.</span> <span class="nav-text">常用的命令</span></a></li></ol></li></ol></div>
             
 
           </div>

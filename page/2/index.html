@@ -396,7 +396,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-06-21 23:47:15" itemprop="dateModified" datetime="2020-06-21T23:47:15+08:00">2020-06-21</time>
+                <time title="修改时间：2020-06-24 22:50:29" itemprop="dateModified" datetime="2020-06-24T22:50:29+08:00">2020-06-24</time>
               
             
           </span>
@@ -575,6 +575,21 @@ spring.datasource.password=******
 <pre><code>#扫描包
 mybatis.type-aliases-package=com.xixi.entity
 </code></pre><p>  6.测试<br>    6.1 例如写一个controller ，调用mapper接口的方法<br>    6.2 运行启动程序springbootapplication<br>    6.3 输入Ip端口和controller路径，页面上就展示了查询的数据</p>
+<h2 id="Spring整合redis"><a href="#Spring整合redis" class="headerlink" title="Spring整合redis"></a>Spring整合redis</h2><p>   一、官网下载Linux版或者windows版的redis<br>        例如：Linux下安装redis<br>          1.解压到cd /usr/local下<br>          2.进入到src make 编译下<br>          3.可以配置下redis.conf文件参数  </p>
+<pre><code>    4. 在src中的较重要文件可以单独提出来，方便操作  
+    5. 在该目录下启动 ./redis-server  
+    6. 停止运行 redis-cli shutdown   
+ps: win中直接双击redis-server.exe 就行了
+</code></pre><p>  二、在springBoot项目中<br>  1.在pom.xml中加入redis的起步依赖</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+   &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre><p>  2.properties 中加入redis的ip和端口</p>
+<pre><code>  #配置redis信息
+spring.redis.host=192.168.25.128
+spring.redis.port=6379
+</code></pre><p> 3.可以写一个测试类，进行测试</p>
 
           
         
@@ -1557,7 +1572,7 @@ System.out.println(&quot;返回值：&quot; + result);
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-02 12:59:24" itemprop="dateModified" datetime="2019-02-02T12:59:24+08:00">2019-02-02</time>
+                <time title="修改时间：2020-06-22 11:28:19" itemprop="dateModified" datetime="2020-06-22T11:28:19+08:00">2020-06-22</time>
               
             
           </span>
@@ -1612,12 +1627,10 @@ System.out.println(&quot;返回值：&quot; + result);
         
           
             <p>项目常见问题思考<br>我们目前的系统已经实现了广告后台管理和广告前台展示，但是对于首页每天有大量的人访问，对数据库造成很大的访问压力，甚至是瘫痪。那如何解决呢？我们通常的做法有两种：一种是数据缓存、一种是网页静态化。</p>
-<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><pre><code>redis是一款开源的Key-Value数据库，运行在内存中，由ANSI C编写。企业开发通常采用Redis来实现缓存。它支持存储的value类型相对更多，包括string(字符串)、list(链表)、set(集合)、zset(sorted set --有序集合)和hash（哈希类型）,同类的产还有memcache 、memcached 、MongoDB等。
-</code></pre><h1 id="Jedis"><a href="#Jedis" class="headerlink" title="Jedis"></a>Jedis</h1><pre><code>Jedis是Redis官方推出的一款面向Java的客户端，提供了很多接口供Java语言调用。可以在Redis官网下载，当然还有一些开源爱好者提供的客户端，如Jredis、SRP等等，推荐使用Jedis。
-</code></pre><h1 id="Spring-Data-Redis"><a href="#Spring-Data-Redis" class="headerlink" title="Spring Data Redis"></a>Spring Data Redis</h1><pre><code>Spring-data-redis是spring大家族的一部分，提供了在srping应用中通过简单的配置访问redis服务，对reids底层开发包(Jedis,  JRedis, and RJC)进行了高度封装
-RedisTemplate提供了redis各种操作、异常处理及序列化，支持发布订阅，并对spring 3.1 cache进行了实现。
-spring-data-redis针对jedis提供了如下功能： 1.连接池自动管理，提供了一个高度封装的“RedisTemplate”类 2.针对jedis客户端中大量api进行了归类封装,将同一类型操作封装为operation接口 ValueOperations：简单K-V操作 SetOperations：set类型数据操作 ZSetOperations：zset类型数据操作 HashOperations：针对map类型的数据操作 ListOperations：针对list类型的数据操作
-</code></pre>
+<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><p>redis是一款开源的Key-Value数据库，运行在内存中，由ANSI C编写。企业开发通常采用Redis来实现缓存。它支持存储的value类型相对更多，包括string(字符串)、list(链表)、set(集合)、zset(sorted set –有序集合)和hash（哈希类型）,同类的产还有memcache 、memcached 、MongoDB等。</p>
+<h1 id="Jedis"><a href="#Jedis" class="headerlink" title="Jedis"></a>Jedis</h1><p>Jedis是Redis官方推出的一款面向Java的客户端，提供了很多接口供Java语言调用。可以在Redis官网下载，当然还有一些开源爱好者提供的客户端，如Jredis、SRP等等，推荐使用Jedis。</p>
+<h1 id="Spring-Data-Redis"><a href="#Spring-Data-Redis" class="headerlink" title="Spring Data Redis"></a>Spring Data Redis</h1><p>   Spring-data-redis是spring大家族的一部分，提供了在srping应  用中通过简单的配置访问redis服务，对reids底层开发包(Jedis,  JRedis, and RJC)进行了高度封装<br>    RedisTemplate提供了redis各种操作、异常处理及序列化，支持发布订阅，并对spring 3.1 cache进行了实现。<br>    spring-data-redis针对jedis提供了如下功能：     1.连接池自动管理，提供了一个高度封装的“RedisTemplate”类     2.针对jedis客户端中大量api进行了归类封装,将同一类型操作封装为operation接口         ValueOperations：简单K-V操作             SetOperations：set类型数据操作     ZSetOperations：zset类型数据操作     HashOperations：针对map类型的数据操作     ListOperations：针对list类型的数据操作</p>
+<h2 id="储存的数据类型"><a href="#储存的数据类型" class="headerlink" title="储存的数据类型"></a>储存的数据类型</h2><h2 id="常用的命令"><a href="#常用的命令" class="headerlink" title="常用的命令"></a>常用的命令</h2>
           
         
       
