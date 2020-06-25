@@ -396,7 +396,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-06-24 22:50:29" itemprop="dateModified" datetime="2020-06-24T22:50:29+08:00">2020-06-24</time>
+                <time title="修改时间：2020-06-25 23:15:29" itemprop="dateModified" datetime="2020-06-25T23:15:29+08:00">2020-06-25</time>
               
             
           </span>
@@ -575,10 +575,13 @@ spring.datasource.password=******
 <pre><code>#扫描包
 mybatis.type-aliases-package=com.xixi.entity
 </code></pre><p>  6.测试<br>    6.1 例如写一个controller ，调用mapper接口的方法<br>    6.2 运行启动程序springbootapplication<br>    6.3 输入Ip端口和controller路径，页面上就展示了查询的数据</p>
-<h2 id="Spring整合redis"><a href="#Spring整合redis" class="headerlink" title="Spring整合redis"></a>Spring整合redis</h2><p>   一、官网下载Linux版或者windows版的redis<br>        例如：Linux下安装redis<br>          1.解压到cd /usr/local下<br>          2.进入到src make 编译下<br>          3.可以配置下redis.conf文件参数  </p>
+<h2 id="SpringBoot整合redis"><a href="#SpringBoot整合redis" class="headerlink" title="SpringBoot整合redis"></a>SpringBoot整合redis</h2><p>   一、官网下载Linux版或者windows版的redis<br>        例如：Linux下安装redis<br>          1.解压到cd /usr/local下<br>          2.进入到src make 编译下<br>          3.可以配置下redis.conf文件参数  </p>
 <pre><code>    4. 在src中的较重要文件可以单独提出来，方便操作  
     5. 在该目录下启动 ./redis-server  
-    6. 停止运行 redis-cli shutdown   
+    6. 停止运行 redis-cli shutdown 
+    7. 进入到 redis-cli 可以对redis进行操作
+     7.1 显示所有的Key   key*
+     7.2 删除某一个key   DEL KeyName
 ps: win中直接双击redis-server.exe 就行了
 </code></pre><p>  二、在springBoot项目中<br>  1.在pom.xml中加入redis的起步依赖</p>
 <pre><code>&lt;dependency&gt;
