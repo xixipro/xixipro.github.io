@@ -1997,7 +1997,7 @@ Your activation code could not be validated(error 1653219)
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-06-27 11:19:10" itemprop="dateModified" datetime="2020-06-27T11:19:10+08:00">2020-06-27</time>
+                <time title="修改时间：2020-06-27 16:02:59" itemprop="dateModified" datetime="2020-06-27T16:02:59+08:00">2020-06-27</time>
               
             
           </span>
@@ -2046,8 +2046,10 @@ JVM是一种用于计算设备的规范，它是一个虚构出来的计算机�
 行字节码时，把字节码解释成具体平台上的机器指令执行。  
 这就是Java的能够“一次编译，到处运行”的原因
 </code></pre><h1 id="深入JVM"><a href="#深入JVM" class="headerlink" title="深入JVM"></a>深入JVM</h1><h2 id="jvm内存管理"><a href="#jvm内存管理" class="headerlink" title="jvm内存管理"></a>jvm内存管理</h2><p>  jvm的内存包括 栈、堆、方法区</p>
-<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><pre><code>变量、常量、对象引用
-</code></pre><h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><pre><code>new的对象  
+<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><pre><code>存储： 变量、对象引用、操作数栈
+每调用一个方法就会为每一个方法生成一个“栈帧”
+</code></pre><h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><pre><code>存储： 对象 、数组
+</code></pre><h3 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h3><pre><code>存储： class文件信息，常量池。
 </code></pre><h4 id="1-新生带"><a href="#1-新生带" class="headerlink" title="1.新生带"></a>1.新生带</h4><h4 id="2-老年带"><a href="#2-老年带" class="headerlink" title="2.老年带"></a>2.老年带</h4><h4 id="3-持久带"><a href="#3-持久带" class="headerlink" title="3.持久带"></a>3.持久带</h4><h2 id="jvm设置参数列表"><a href="#jvm设置参数列表" class="headerlink" title="jvm设置参数列表"></a>jvm设置参数列表</h2><h2 id="jvm常用工具"><a href="#jvm常用工具" class="headerlink" title="jvm常用工具"></a>jvm常用工具</h2><p>对JVM调优的时候会用到JDK自带的工具，在JDK的bin文件下<br>1.jps:虚拟机进程状态工具</p>
 <pre><code>ps-ef|grep java
 </code></pre><p>2.jstat: 虚拟机统计信息监视工具<br>3.jmap: java内存印象工具<br>4.jhat: 虚拟机堆转储快照分析工具<br>5.jstack: java堆栈跟踪工具<br>6.jinfo: java配置信息工具<br>7.jconsole: 一种基于JMX的可视化监视、管理工具<br>8.JVisualVM: 功能最强大的运行监视和故障处理程序</p>
