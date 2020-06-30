@@ -282,7 +282,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">25</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">26</span></a>
 
   </li>
 
@@ -318,6 +318,253 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/28/springMVC/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="anne">
+      <meta itemprop="description" content="用心感受生活">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anne Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/01/28/springMVC/" class="post-title-link" itemprop="url">springMVC</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-28 12:05:38 / 修改时间：13:39:07" itemprop="dateCreated datePublished" datetime="2019-01-28T12:05:38+08:00">2019-01-28</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/spring/" itemprop="url" rel="index"><span itemprop="name">spring</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="springMVC介绍"><a href="#springMVC介绍" class="headerlink" title="springMVC介绍"></a>springMVC介绍</h1><pre><code>基于MVC设计模式的web层的框架。
+</code></pre><h2 id="什么是mvc模式？"><a href="#什么是mvc模式？" class="headerlink" title="什么是mvc模式？"></a>什么是mvc模式？</h2><pre><code>模型（model），视图（view），控制器（controller）
+</code></pre><h2 id="Springmvc的执行流程"><a href="#Springmvc的执行流程" class="headerlink" title="Springmvc的执行流程"></a>Springmvc的执行流程</h2><pre><code>    / 浏览器发出请求 ——&gt; DispatcherServlet（接受请求，转发） ——&gt; handleMapping ——&gt; controller（modelAndView)
+用户                                                                                 |       
+    \ 浏览器接受响应&lt;——  DispatcherServlet                                   &lt;——    &lt;——|
+                       |  |      |  |      
+                     view渲染   视图解析器(视图结果)
+</code></pre><h2 id="Springmvc的配置"><a href="#Springmvc的配置" class="headerlink" title="Springmvc的配置"></a>Springmvc的配置</h2><p>（1）在web.xml中</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;web-app xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+xmlns=&quot;http://java.sun.com/xml/ns/javaee&quot;
+xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&quot;
+version=&quot;2.5&quot;&gt;
+&lt;display-name&gt;sringmvc-mybatis&lt;/display-name&gt;
+&lt;welcome-file-list&gt;
+&lt;welcome-file&gt;index.html&lt;/welcome-file&gt;
+&lt;/welcome-file-list&gt;
+&lt;filter&gt;
+&lt;filter-name&gt;encoding&lt;/filter-name&gt;
+&lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;
+&lt;init-param&gt;
+&lt;param-name&gt;encoding&lt;/param-name&gt;
+&lt;param-value&gt;UTF-8&lt;/param-value&gt;
+&lt;/init-param&gt;
+&lt;/filter&gt;
+&lt;filter-mapping&gt;
+&lt;filter-name&gt;encoding&lt;/filter-name&gt;
+&lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;
+
+&lt;servlet&gt;
+&lt;servlet-name&gt;mvc&lt;/servlet-name&gt;
+  &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+&lt;init-param&gt;
+&lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+&lt;param-value&gt;classpath:spring/spring-servlet.xml&lt;/param-value&gt;
+&lt;/init-param&gt;
+&lt;/servlet&gt;
+&lt;servlet-mapping&gt;
+&lt;servlet-name&gt;mvc&lt;/servlet-name&gt;
+&lt;url-pattern&gt;*.do&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+
+&lt;context-param&gt;
+&lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+&lt;param-value&gt;classpath*:spring/applicationContext*.xml&lt;/param-value&gt;
+&lt;/context-param&gt;
+&lt;listener&gt;
+&lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;
+&lt;/listener&gt;
+&lt;/web-app&gt;
+</code></pre><p> （2）创建spring/spring-servlet.xml</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; 
+xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
+xsi:schemaLocation=&quot;
+http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context 
+http://www.springframework.org/schema/context/spring-context-3.0.xsd
+http://www.springframework.org/schema/mvc 
+http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd&quot;&gt;
+&lt;!-- 组件注解扫描 --&gt;
+&lt;context:component-scan base-package=&quot;com&quot; /&gt;
+
+&lt;!-- &lt;mvc:annotation-driven&gt;
+&lt;mvc:message-converters register-defaults=&quot;true&quot;&gt;
+&lt;bean class=&quot;com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter&quot;&gt;  
+&lt;property name=&quot;supportedMediaTypes&quot; value=&quot;application/json&quot;/&gt;
+&lt;property name=&quot;features&quot;&gt;
+&lt;array&gt;
+&lt;value&gt;WriteMapNullValue&lt;/value&gt;
+&lt;value&gt;WriteDateUseDateFormat&lt;/value&gt;
+&lt;/array&gt;
+&lt;/property&gt;
+&lt;/bean&gt;
+&lt;/mvc:message-converters&gt;  
+&lt;/mvc:annotation-driven&gt; --&gt;
+&lt;!-- @resposeBody注解对Jason的支持，需要开启注解驱动 --&gt;
+&lt;mvc:annotation-driven/&gt;
+&lt;!-- &lt;mvc:message-converters&gt;
+&lt;bean class=&quot;org.example.MyHttpMessageConverter&quot;/&gt;
+&lt;bean class=&quot;org.example.MyOtherHttpMessageConverter&quot;/&gt;
+&lt;/mvc:message-converters&gt; --&gt;
+&lt;/beans&gt;
+</code></pre>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1522,7 +1769,7 @@ AspectJ是一个基于Java语言的AOP框架，Spring2.0开始，Spring AOP引�
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-count">26</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
