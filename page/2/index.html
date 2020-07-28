@@ -747,7 +747,7 @@ JVM是一种用于计算设备的规范，它是一个虚构出来的计算机�
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-07-13 22:51:24" itemprop="dateModified" datetime="2020-07-13T22:51:24+08:00">2020-07-13</time>
+                <time title="修改时间：2020-07-28 22:54:13" itemprop="dateModified" datetime="2020-07-28T22:54:13+08:00">2020-07-28</time>
               
             
           </span>
@@ -943,7 +943,50 @@ ps: win中直接双击redis-server.exe 就行了
 spring.redis.host=192.168.25.128
 spring.redis.port=6379
 </code></pre><p> 3.可以写一个测试类，进行测试</p>
+<p>##springboot整合log4j<br> 1.导入依赖</p>
+<pre><code>    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+        &lt;exclusions&gt;&lt;!-- 去掉springboot默认日志框架logback的配置 --&gt;
+            &lt;exclusion&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-starter-logging&lt;/artifactId&gt;
+            &lt;/exclusion&gt;
+        &lt;/exclusions&gt;
+    &lt;/dependency&gt;
 
+&lt;dependency&gt; &lt;!-- 引入log4j2依赖 --&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-log4j2&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+</code></pre><p> 2.log4j2.xml 配置</p>
+<pre><code>    &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+      &lt;Configuration status=&quot;WARN&quot; monitorInterval=&quot;30&quot;&gt;
+&lt;Properties&gt;
+    &lt;Property name=&quot;LOG_PATTERN&quot;&gt;
+        %d{yyyy-MM-dd HH:mm:ss.SSS} %5p ${hostName} --- [%15.15t] %-40.40c{1.} : %m%n%ex
+    &lt;/Property&gt;
+&lt;/Properties&gt;
+&lt;Appenders&gt;
+    &lt;Console name=&quot;ConsoleAppender&quot; target=&quot;SYSTEM_OUT&quot; follow=&quot;true&quot;&gt;
+        &lt;PatternLayout pattern=&quot;${LOG_PATTERN}&quot;/&gt;
+    &lt;/Console&gt;
+&lt;/Appenders&gt;
+&lt;Loggers&gt;
+    &lt;Logger name=&quot;#{com.xixi.mapper}&quot; level=&quot;trace&quot;   additivity=&quot;false&quot;&gt;
+        &lt;AppenderRef ref=&quot;ConsoleAppender&quot; /&gt;
+    &lt;/Logger&gt;
+
+    &lt;Root level=&quot;info&quot;&gt;
+        &lt;AppenderRef ref=&quot;ConsoleAppender&quot; /&gt;
+    &lt;/Root&gt;
+&lt;/Loggers&gt;
+&lt;/Configuration&gt;
+</code></pre><p> 3.application.properties</p>
+<pre><code>#配置log4j文件路径
+logging.config=classpath:log4j2.xml
+logging.level.com.xixi.mapper=debug
+</code></pre>
           
         
       
